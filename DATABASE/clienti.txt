@@ -1,0 +1,1 @@
+create table `clienti`(`id` int auto_increment not null, `cap` int not null, `nome` varchar(20) not null, `cognome` varchar(20) not null, `indirizzo` varchar(50) not null, `eta` int not null, `tel` varchar(20) not null, `email` varchar(100) not null unique, `psw` varchar(50) not null, `cf` char(16) not null unique, primary key(`id`)) ENGINE = InnoDB;

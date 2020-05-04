@@ -1,0 +1,2 @@
+
+create table `card`(`id` int auto_increment not null, `token` varchar(500) null, primary key(`id`)) ENGINE = InnoDB;
