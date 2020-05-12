@@ -1,0 +1,61 @@
+
+ANDARE SU :
+
+# - cd /usr/share/java
+
+E CONTROLLARE CHE I FILES JAR :
+
+mysql-connector-java-8.0.20.jar
+mysql-connector-java-5.1.42.jar
+
+CI SIANO NEL PERCORSO, NEL CASO CONTRARIO PROVVEDERE A COPIARCELI, ESEMPIO :
+
+# - sudo cp mysql-connector-java-8.0.20.jar /usr/share/java/mysql-connector-java-8.0.20.jar
+
+APRIRE UN TERMINALE E DIGITARE :
+
+# - export CLASSPATH=/usr/share/java/mysql-connector-java-8.0.20.jar:.
+
+POI ANCORA :
+
+# - CLASSPATH=".:/usr/share/java/mysql-connector-java-8.0.20.jar"
+# - export CLASSPATH
+# - echo $CLASSPATH
+
+DOPODICHÈ, EDITARE IL SEGUENTE FILE :
+
+# - sudo gedit /etc/environment 
+
+E AGGIUNGERE O ASSICURARSI CHE CI SIA LA SEGUENTE RIGA :
+
+# Set classpath for JDBC & MySQL
+CLASSPATH=".:/usr/share/java/mysql-connector-java-8.0.20.jar"
+
+POI EDITARE IL SEGUENTE FILE :
+
+# - sudo gedit ~/.profile
+
+E INSERIRE LA SEGUENTE RIGA (ANCHE ALLA FINE DEL FILE) :
+
+CLASSPATH=".:/usr/share/java/mysql-connector-java-8.0.20.jar"
+export CLASSPATH
+
+UNA VOLTA TERMINATI TUTTI I SEGUENTI COMANDI AGGIORNARE IL FILE BASHRC :
+
+source ~/.bashrc
+
+RIAVVIARE IL COMPUTER. UNA VOLTA RIAVVIATO, PROVARE A COMPILARE E A CONNETTERCI VIA JAVA SU DB MYSQL (REMOTO O LOCALE), PER CONNETTERCI VIA DB REMOTO USARE LA SEGUENTE SINTASSI :
+
+jdbc:mysql://<IP>:3306/dbName/
+
+SENZA DIMENTICARE DI AGGIUNGERE IL FORMATO ORA UTC ALTRIMENTI NIL DRIVER PER IL DB NON FUNZIONERÀ, ESEMPIO :
+
+"jdbc:mysql://12.87.63.109:3306/" 
++ dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
+E SENZA DIMENTICARE ANCHE DI AGGIUNGERE IL NOME DELLA CLASSE CORRETTA E AGGIORNATA DEL DRIVER JAR DI MYSQL-CONNECTOR-JAVA, CHE SI CHIAMA :
+
+com.mysql.cj.jdbc.Driver
+
+BUON DIVERTIMENTO!
+
