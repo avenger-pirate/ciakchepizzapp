@@ -1,0 +1,511 @@
+
+https://forum.ubuntu-it.org/viewtopic.php?t=414354
+
+ -----------------------------------------------------------------------------
+
+
+
+
+
+                       [Java] Connessione a database mysql
+
+
+
+
+
+Linguaggi di programmazione: php, perl, python, C, bash e tutti gli altri.
+Scrivi risposta
+
+  • Stampa pagina
+
+[                    ] Cerca Ricerca avanzata 
+8 messaggi • Pagina 1 di 1
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+[Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 14:41
+
+Ciao a tutti,
+ho compilato senza errori questo codice
+
+Codice: Seleziona tutto
+
+import java.sql.*;
+
+public class JDBCApp {
+
+    public static void main (String args[]) {
+        try {
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Connection con = DriverManager.getConnection("jdbc:odbc:amici","root","mypassword");
+            Statement cmd = con.createStatement();
+            ResultSet rs = cmd.executeQuery("SELECT * FROM nomi");
+
+            while (rs.next()) {
+                System.out.println(rs.getString("cognome"));
+                System.out.println(rs.getString("nome"));
+                System.out.println(rs.getString("telefono"));
+            }
+            rs.close();
+            cmd.close();
+            con.close();
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Innanzitutto è giusto che il DSN sia il nome del database? nel mio caso è
+"amici". Ovviamente "nomi" è il nome della tabella e
+"nome","cognome","telefono" sono le colonne della tabella. A runtime ho questa
+eccezione
+
+Codice: Seleziona tutto
+
+java.lang.ClassNotFoundException: sun.jdbc.odbc.JdbcOdbcDriver
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:321)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:294)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:266)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:186)
+        at JDBCApp.main(JDBCApp.java:8)
+
+Non trova il driver? Forse non è installato automaticamente con l'openjdk? O
+forse il classpath è impostato male?
+Grazie
+
+PS: Effettivamente nel package /usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar il
+package java.sql c'è ma nel package sun non c'è "jdbc"
+Ultima modifica di dany-vai il giovedì 7 ottobre 2010, 14:51, modificato 1
+volta in totale.
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    childmetal
+    Prode Principiante
+    Messaggi: 82
+    Iscrizione: martedì 3 novembre 2009, 16:59
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da childmetal » giovedì 7 ottobre 2010, 16:09
+
+probabilmente se passi alla jdk sun funziona
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 16:49
+
+Ok  io provo... ma perchè non dovrebbe funzionare con l'open-jdk??
+grazie
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 19:31
+
+Ok ho sostituito l'open jdk e tutto ciò correlato (jdk, jre, icedtea plugin)
+con i pacchetti sun (jdk, jre, plugin per firefox) e effettivamente nel rt.jar
+adesso c'è il package sun.jdbc (e così via).
+Adesso l'eccezione ottenuta è un'altra, anche se relativa alla connessione col
+database.
+
+Codice: Seleziona tutto
+
+java.sql.SQLException: [unixODBC][Driver Manager]Data source name not found, and no default driver specified
+        at sun.jdbc.odbc.JdbcOdbc.createSQLException(JdbcOdbc.java:6957)
+        at sun.jdbc.odbc.JdbcOdbc.standardError(JdbcOdbc.java:7114)
+        at sun.jdbc.odbc.JdbcOdbc.SQLDriverConnect(JdbcOdbc.java:3073)
+        at sun.jdbc.odbc.JdbcOdbcConnection.initialize(JdbcOdbcConnection.java:323)
+        at sun.jdbc.odbc.JdbcOdbcDriver.connect(JdbcOdbcDriver.java:174)
+        at java.sql.DriverManager.getConnection(DriverManager.java:582)
+        at java.sql.DriverManager.getConnection(DriverManager.java:185)
+        at JDBCApp.main(JDBCApp.java:9)
+
+Forse il nome del database non va come dsn, ma non capisco quel "no default
+driver specified".  ::)
+Grazie
+
+PS: Su questo sito è disponibile il download di un connettore mysql per java,
+ma il driver Jdbc-Odbc non dovrebbe essere universale? Sono un po confuso....
+Ultima modifica di dany-vai il giovedì 7 ottobre 2010, 19:36, modificato 1
+volta in totale.
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 19:51
+
+Allora dopo ricerche credo di aver capito. Per accedere a un database mysql o
+uso un driver jdbc direttamente, fornito dal produttore del database (in questo
+caso mysql, si chiama connectorJ e si trova nei repository compreso nel
+pacchetto libmysql-java). Quindi il driver da caricare non è "sun.jdbc. ecc
+ecc" ma il package inserito nel sistema dall'installazione di libmysql-java (la
+sto cercando in giro per il sistema per inserirlo nel classpath). Oppure
+utilizzo (scaricandolo anch'esso) un driver Odbc specifico per il databse, a
+cui accedo attraverso un driver Jdbc "generico"(fornito da java :
+JdbcOdbcDriver) che fa da ponte verso l'odbc (un qualsiasi odbc, a questo
+punto).
+Ditemi per favore se sbaglio qualcosa o il ragionamento è giusto.
+Grazie
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 20:17
+
+Trovato. In /usr/share/java c'è mysql-connector-java-5.1.10.jar. All'interno in
+com.mysql.jdbc c'è la classe Driver.
+Ho aggiunto il percorso completo di jar nel classpath ma continua a darmi
+ClassNotFound, "com.mysql.jdbc.Driver". Adesso cerco la documentazione, visto
+che oltre a Driver questo package è zeppo di classi.
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    dany-vai
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 481
+    Iscrizione: domenica 24 gennaio 2010, 19:26
+    Desktop: kde 4.8
+    Distribuzione: Ubuntu 12.04 LTS i686
+    Località: Marsala(TP)
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da dany-vai » giovedì 7 ottobre 2010, 21:00
+
+Ok ho risolto da solo  ;D
+Scrivo la soluzione per un eventuale lettore.
+1) Installare il jdk sun, l'openjdk per qualche motivo non contiene i package
+necessari; forse è possibile un work-around (come utilizzare le classi offerte
+dal pacchetto che si scarica dal sito mysql) ma io non lo conosco, mi limito a
+postare la mia soluzione.
+2) installare "libmysql-java", il jar associato finisce in /usr/share/java.
+3) Aggiungere il jar installato (mysql-connector-java-5.1.10.jar) al classpath.
+Basta editare un file come ~/.profile (per impostare un classpath per il solo
+utente) aggiungendo la riga
+
+Codice: Seleziona tutto
+
+CLASSPATH=".:/usr/share/java/mysql-connector-java.5.1.10.jar"
+export CLASSPATH
+
+Controllare che dando
+
+Codice: Seleziona tutto
+
+echo $CLASSPATH
+
+da QUALSIASI terminale risponda con il giusto classpath, e controllare che
+avvenga anche dopo il riavvio. Io ho preferito aggiungere in /etc/environment
+la riga
+
+Codice: Seleziona tutto
+
+CLASSPATH=".:/usr/share/java/mysql-connector-java.5.1.10.jar"
+
+(per tutti gli utenti) e poi inserire in ~/.profile solo la riga "export
+CLASSPATH". La classe che ci serve si trova nel jar in com.mysql.jdbc.Driver.
+
+
+4) Adesso il codice va un po rivisto. Il subprotocol non è più odbc ma mysql,
+la sintassi da usare è specificata nella documentazione qui.
+
+Codice: Seleziona tutto
+
+import java.sql.*;
+
+public class JDBCApp {
+
+    public static void main (String args[]) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/[nome_database]?"+ "user=utente&password=password");
+            Statement cmd = con.createStatement();
+            ResultSet rs = cmd.executeQuery("SELECT * FROM nomi");
+
+            while (rs.next()) {
+                System.out.println(rs.getString("cognome"));
+                System.out.println(rs.getString("nome"));
+                System.out.println(rs.getString("telefono"));
+            }
+            rs.close();
+            cmd.close();
+            con.close();
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+NOTE: La sintassi da immettere nel metodo getConnection è indicata nella doc
+ufficiale. Se non è stata impostata una password per l'utente (mysql) indicato
+la stessa nella stringa-parametro si può omettere. Il dsn è il nome del
+database. "localhost" va immesso ovviamente se il database è in locale.
+
+"nomi" è la tabella del database che mi interessa.
+"nome","cognome","telefono" sono i campi della tabella.
+
+Nella doc c'è scritto di non importare il package com.mysql.jdbc perchè può
+creare problemi. La classe com.mysql.jdbc.Driver (del jar "aggiuntivo")
+implementa l'interfaccia java.sql.Driver (della lib standard).
+
+Spero di aver aiutato qualcuno.
+Ciao
+Ultima modifica di dany-vai il giovedì 7 ottobre 2010, 21:08, modificato 1
+volta in totale.
+Free as free speech
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Avatar utente
+    44danni
+    Scoppiettante Seguace
+    Scoppiettante Seguace
+    Messaggi: 606
+    Iscrizione: domenica 8 novembre 2009, 21:41
+
+Re: [Java] Connessione a database mysql
+
+  • Cita
+
+Messaggio da 44danni » lunedì 23 luglio 2012, 16:41
+
+Grazie.
+Mi è stato davvero utile!
+Our goal: To get the world to uninstall the Flash Player plugin from their
+desktop browsers.
+http://occupyflash.org/
+Ritorna su
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Scrivi risposta
+
+  • Stampa pagina
+
+Mostra: [Tutti i messaggi] Ordina per: [Ora di invio] Orientamento: 
+[Crescente  ]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[Vai]
+8 messaggi • Pagina 1 di 1
+
+Ritorna a “Programmazione”
+
+Vai a
+
+  • Notizie e informazioni utili
+  • ↳   Novità e aggiornamenti
+  • ↳   Prime informazioni sul mondo Ubuntu
+  • Primi passi
+  • ↳   Dilemmi del principiante
+  • ↳   Installazione e aggiornamento del sistema operativo
+  • ↳   Sessione live DVD/USB
+  • ↳   Ubuntu su macchina virtuale
+  • Software
+  • ↳   Applicazioni
+  • ↳   Applicazioni professionali
+  • ↳   Kernel e servizi di sistema
+  • ↳   Multimediale
+  • ↳   Videogiochi
+  • ↳   Software educazionale
+  • ↳   Tecnologie assistive
+  • Hardware
+  • ↳   Driver e periferiche
+  • ↳   Ubuntu Phone, PowerPC e ARM
+  • Reti e server
+  • ↳   Connessione e configurazione delle reti
+  • ↳   Ubuntu su server
+  • Ambienti desktop
+  • ↳   GNOME
+  • ↳   KDE
+  • ↳   Altri ambienti desktop e window manager
+  • ↳   LXDE/LXQt
+  • ↳   MATE
+  • ↳   Unity
+  • ↳   Xfce
+  • ↳   Personalizzazione dell'ambiente desktop
+  • Programmazione, sicurezza e sviluppo
+  • ↳   Progetti della Comunità
+  • ↳   Programmazione
+  • ↳   Strumenti per la programmazione
+  • ↳   Sicurezza
+  • ↳   Annunci di sicurezza
+  • ↳   Ubuntu in sviluppo (Focal Fossa 20.04)
+  • Comunità di Ubuntu-it
+  • ↳   Consiglio della Comunità
+  • ↳   Membership Ubuntu-it
+  • ↳   Gruppo Documentazione
+  • ↳   Gruppo Forum
+  • ↳   Gruppo Promozione
+  • ↳   Newsletter italiana
+  • ↳   Gruppo Sviluppo
+  • ↳   Gruppo Web
+  • Comunità del forum
+  • ↳   Bacheca eventi
+  • ↳   Bar Sport
+  • ↳   Bar Ubuntu
+  • ↳   Altre distribuzioni e sistemi operativi
+  • ↳   Consigli per gli acquisti
+  • Archivio del forum
+  • ↳   Sezioni chiuse o archiviate
+  • ↳   Architettura x86_64
+  • ↳   Architetture meno diffuse
+  • ↳   CD italiano di Ubuntu-it
+  • ↳   Precedenti Ubuntu in sviluppo
+  • ↳   Hoary 5.04
+  • ↳   Breezy 5.10
+  • ↳   Dapper 6.06
+  • ↳   Edgy 6.10
+  • ↳   Feisty 7.04
+  • ↳   Gutsy 7.10
+  • ↳   Hardy 8.04
+  • ↳   Intrepid 8.10
+  • ↳   Jaunty 9.04
+  • ↳   Karmic 9.10
+  • ↳   Lucid 10.04
+  • ↳   Maverick 10.10
+  • ↳   Natty Narwhal 11.04
+  • ↳   Oneiric Ocelot 11.10
+  • ↳   Precise Pangolin 12.04
+  • ↳   Quantal Quetzal 12.10
+  • ↳   Raring Ringtail 13.04
+  • ↳   Saucy Salamander 13.10
+  • ↳   Trusty Tahr 14.04
+  • ↳   Utopic Unicorn 14.10
+  • ↳   Vivid Vervet 15.04
+  • ↳   Wily Werewolf 15.10
+  • ↳   Xenial Xerus 16.04
+  • ↳   Yakkety Yak 16.10
+  • ↳   Zesty Zapus 17.04
+  • ↳   Artful Aardvark 17.10
+  • ↳   Bionic Beaver 18.04
+  • ↳   Cosmic Cuttlefish 18.10
+  • ↳   Disco Dingo 19.04
+  • ↳   Eoan Ermine 19.10
+  • ↳   Quarantena
+  • ↳   Risoluzione controversie
+  • ↳   Sondaggi
+
+Chi c’è in linea
+
+Visualizzano questa sezione: Nepler265, ZioCrick e 3 ospiti
+
+  • Indice
+  • Tutti gli orari sono UTC+02:00 Europa/Roma
+  • Elimina cookie
+  • Gruppo Forum
+  • 
+
+Basato su phpBB® Forum Software © phpBB Limited • PostgreSQL© • Megmoticons©
+
+Privacy | Condizioni
+
+Time: 0.557s | Queries: 22 | Peak Memory Usage: 17.05 MiB | GZIP: On
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+Accedi  •  Iscriviti
+
+Nome utente:
+    [                         ]
+
+Password:
+    [                         ]
+    Password dimenticata
+
+[ ]Collegare in automatico a ogni visita
+[ ]Nascondere il proprio stato per questa sessione [Accedi] 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Facebook  •  Google  •  Twitter
+
+Ubuntu e Canonical sono marchi registrati da Canonical Ltd.
+
