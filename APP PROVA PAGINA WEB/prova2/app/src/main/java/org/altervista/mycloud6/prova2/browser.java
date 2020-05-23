@@ -16,7 +16,7 @@ public class browser extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.Browser);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://ciakchepizza.com/api/iscriviti.php");
+        webView.loadUrl("http://ciakchepizza.com/m/formLogin.php");
 
 
     }
