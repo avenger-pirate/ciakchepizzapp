@@ -1,15 +1,23 @@
 package org.altervista.mycloud6.prova2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class browser extends AppCompatActivity {
+    private TextView textView;
     private WebView webView;
+    final Context context = this;
+    Intent i;
+    String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +33,66 @@ public class browser extends AppCompatActivity {
         String toastMsg;
         switch(screenSize) {
             case Configuration.SCREENLAYOUT_SIZE_LARGE:
-                toastMsg = "Large screen";
+                //toastMsg = "Large screen";
                 webView.loadUrl("https://ciakchepizza.com");
                 break;
             case Configuration.SCREENLAYOUT_SIZE_NORMAL:
-                toastMsg = "Normal screen";
+                //toastMsg = "Normal screen";
                 webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
-                break;
+
+                //COME BACK ACTIVITY
+                webView.setWebViewClient(new WebViewClient()
+                {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        if (url.contains(url)) {
+                            Intent i = new Intent(browser.this, DashBoard.class);
+                            startActivity(i);
+                            finish();}
+                        return true;
+                    }
+                });
+
+            break;
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
                 toastMsg = "Small screen";
                 webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
+
+
+                //COME BACK ACTIVITY
+                webView.setWebViewClient(new WebViewClient()
+                {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        if (url.contains(url)) {
+                            Intent i = new Intent(browser.this, DashBoard.class);
+                            startActivity(i);
+                            finish();}
+                        return true;
+                    }
+                });
+
                 break;
             default:
                 toastMsg = "Le dimensioni dello schermo non sono né large, ne normal, ne piccole";
                 webView.loadUrl("https://ciakchepizza.com/m/tabletFormLogin.php");
 
+
+                //COME BACK ACTIVITY
+                webView.setWebViewClient(new WebViewClient()
+                {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        if (url.contains(url)) {
+                            Intent i = new Intent(browser.this, DashBoard.class);
+                            startActivity(i);
+                            finish();}
+                        return true;
+                    }
+                });
+
         }
-        Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
-
-
-        //webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
+        //Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
 
 
     }
