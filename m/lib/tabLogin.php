@@ -87,13 +87,13 @@ try{
                      echo $erre = "<center>
                                    <table align='center' border='1' 
                                           bordercolor='red' cellpadding='0' 
-                                          cellspacing='0' height='0px'
+                                          cellspacing='0' height='10px'
                                           width='70%' 
                                           style='background-color: white; 
-                                          margin-top: 120%' >
+                                          margin-top: 5%' >
                                    <tr>
                                    <td>
-                                   <div style='font-size: 30px; color: red'><b><i><center> Login Fallita </center></i></b>
+                                   <div style='font-size: 50px; color: red'><b><i><center> Login Fallita </center></i></b>
                                    </div>
                                    </td>
                                    </tr>
@@ -104,6 +104,7 @@ try{
             
 
 }}
+
 ?>
 
 </html>

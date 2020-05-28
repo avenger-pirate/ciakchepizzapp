@@ -40,7 +40,7 @@ if($DeskLinux){
 <tr>
 <td>
 
-<form action="login.php" type="submit" name="accedi" method="POST" class="form_elogin">
+<form action="tabLogin.php" type="submit" name="accedi" method="POST" class="form_elogin">
 
 <input type="email" style="font-family: 'Coolvetica Rg', sans-serif !important;" width="45%" placeholder="Email" class="form_elogin" name="email" align="center">
 <br />
