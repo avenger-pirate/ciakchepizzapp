@@ -10,7 +10,7 @@
 <title> Accedi </title></head>
 
 <body background="img/sfondo.png"  height="100%" width="100%" 
-style="background-size: cover">
+style="background-size: cover" bgproperties="fixed" >
 
 <?php
 
@@ -32,23 +32,45 @@ if($DeskLinux){
 
 ?>
 
-<center><div class="coolvetica" style="margin-left: -5%; margin-top: auto; font-size: 30px"><b><i> Accedi </i></b></div></center>
+<!-- ACCEDI -->
+<center>
+<table align='center' border='1' bordercolor='red' cellpadding='0' 
+       cellspacing='0' height='50px' width='400px' 
+       style='background-color: white; margin-top: 0%; margin: auto' >
+<tr>
+<td>
+<div class="coolvetica" style="font-size: 30px; color: red; margin-left: -5%; margin-top: 0px"><b><i><center> Accedi </center></i></b></div>
+</td>
+</tr>
+</table>
+</center>
+<!-- EOF ACCEDI -->
+
+<br /><br />
+
 
 <!-- FORM DI LOGIN -->
 <center>
-<table class="login" align="center" border="0" cellpadding="0" cellspacing="0" height="0" width="45%" >
+<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 20%; margin: auto' >
 <tr>
 <td>
 
-<form action="tabLogin.php" type="submit" name="accedi" method="POST" class="form_elogin">
+<form action="tabLogin.php" type="submit" name="accedi" 
+      method="POST" class="search" class="form_elogin" >
 
-<input type="email" style="font-family: 'Coolvetica Rg', sans-serif !important;" width="45%" placeholder="Email" class="form_elogin" name="email" align="center">
+<input type="email" style="font-family: 'Coolvetica Rg', sans-serif !important"    placeholder="Email" class="form_elogin" name="email" align="center" />
+       
 <br />
-<input type="password" width="45%" placeholder="Password" class="form_elogin" name="password" align="center">
+<input type="password" placeholder="Password" class="form_elogin" 
+       name="password" align="center" />
 <br />
 
-<button type="reset" width="45%" name="reset" class="form_elogin" value="reset"> Cancel </button>
-<button type="submit" width="45%" name="login"  class="form_elogin"> Accedi </button>
+<button type="reset" name="reset" class="form_elogin" 
+        class="search" value="reset" > Cancel </button>
+<br />
+
+<button type="submit" name="login" class="form_elogin" 
+        class="search" > Accedi </button>
 
 </form>
 
@@ -57,6 +79,8 @@ if($DeskLinux){
 </table>
 </center>
 <!-- EOF FORM -->
+
+
 
 <style type="text/css">
 
@@ -68,19 +92,19 @@ text-align:center;
 margin-top: 100px;}
 
 .login{
-height: 10%;
+height: 50%;
 width: 80%;
 color: black;
 font-size: 22px;
-margin-top: auto;
-margin-left: 8%;
+margin-top: 7%;
+margin: auto;
 text-decoration: none;
-float:left;}
+float:center;}
 
 .signup{
 color: blue;
 font-size:20px;
-margin-top: auto;
+margin-top: -40px;
 margin-left: 88.1%;
 text-decoration: none;
 float:left;}
@@ -89,7 +113,7 @@ float:left;}
 /*font-weight: bold; */
 color: blue;
 font-size:20px;
-margin-top: auto;
+margin-top: -40px;
 text-decoration: none;
 float: left; 
 margin-left: 89.8%;}
@@ -99,14 +123,30 @@ margin-left: 89.8%;}
 -moz-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
 -o-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
 box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
-/* margin-top: -15%; */
 text-align: center;
 font-size: 20px;
-width: 100%; 
-height: 50%;
+width: 500px; 
+height: 50px;
 
 margin: auto;
 font-family: 'Coolvetica Rg';
+}
+
+input, input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 4;}
+    
+    input.search{
+        height: 100px;
+        width: 300px;
+        padding-left: 300px;
+        padding-top: -20px;
+    }
+    
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .table{
@@ -115,7 +155,7 @@ margin-left: 78%;
 -webkit-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
 -moz-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
 -o-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;
-box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;}}
+box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;}
 
 
 /* .table{
@@ -169,7 +209,7 @@ box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;}
     @import url('https://cdn.titanwar.net/fonts/coolvetica_rg/stylesheet.css);
     
 
-    margin: auto;
+    margin: 0;
     font-family: 'Coolvetica Rg'
 }
 
@@ -179,6 +219,11 @@ box-shadow: inset 5px 5px 10px 0px #FFFFFF,5px -3px 10px 0px #000000;}
   color: peachpuff;
   font-family: 'Coolvetica Rg';
   font-size: 22px;
+}
+
+#search {
+     width: 400%;
+    /*height: 2em; */
 }
 
 </style>

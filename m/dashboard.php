@@ -7,7 +7,7 @@
 <meta property="og:url" content="https://www.ciakchepizza.com/m/formLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
 <meta property="og:type" content="website" /> 
-<title> Accedi </title></head>
+<title> dahboard </title></head>
 
 <body background="img/sfondo.png"  height="100%" width="100%" 
 style="background-size: cover">
@@ -33,49 +33,11 @@ if($DeskLinux){
 ?>
 
 
-<!-- ACCEDI -->
-<center>
-<table align='center' border='1' bordercolor='red' cellpadding='0' 
-       cellspacing='0' height='50px' width='200px' 
-       style='background-color: white; margin-top: 60%' >
-<tr>
-<td>
-<div class="coolvetica" style="font-size: 30px; color: red; margin-left: -5%; margin-top: 0px"><b><i><center> Accedi </center></i></b></div>
-</td>
-</tr>
-</table>
-</center>
-<!-- EOF ACCEDI -->
 
 
+<button  name="Game" width="60%" ><a href="https://www.ciakchepizza.com/game/index.html"> Game</a> </button>
 
-<!-- FORM DI LOGIN -->
-<center>
-<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 20%' >
-<tr>
-<td>
 
-<form action="login.php" type="submit" name="accedi" 
-      method="POST" class="search" class="form_elogin" >
-
-<input type="email" style="font-family: 'Coolvetica Rg', sans-serif !important"    placeholder="Email" class="form_elogin" name="email" align="center" />
-       
-<br />
-<input type="password" placeholder="Password" class="form_elogin" 
-       name="password" align="center" />
-<br />
-
-<button type="reset" name="reset" class="form_elogin" 
-        class="search" value="reset" > Cancel </button>
-
-<button type="submit" name="login" width="60%" class="form_elogin" 
-        class="search" > Accedi </button>
-
-</form>
-
-</td>
-</tr>
-</table>
 </center>
 <!-- EOF FORM -->
 

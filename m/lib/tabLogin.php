@@ -12,7 +12,7 @@ $ipod = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
 $webos = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"WebOS");
 $DeskLinux = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"X11;");
 
-echo $width = " <script>document.write(screen.width); </script>";
+$width = " <script>document.write(screen.width); </script>";
 
 $n="<br />";
 echo $n;
