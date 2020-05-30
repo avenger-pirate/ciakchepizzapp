@@ -58,7 +58,7 @@ try{
          echo "<br />" . "Database Non Connesso!";
          die();}
          //echo "Database Connesso.";
-         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table utenti
+         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
            $conn->quote($riga['email']);
            $conn->quote($riga['psw']);
             $conn->quote($riga['id']);
