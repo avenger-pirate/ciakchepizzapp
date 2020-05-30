@@ -1,0 +1,262 @@
+
+https://www.skysilk.com/blog/2018/how-to-connect-an-android-app-to-a-mysql-database/
+
+ -----------------------------------------------------------------------------
+
+
+
+
+
+                How To Connect An Android App To A MySQL Database
+
+
+
+
+La connessione di un'app mobile a un database è una base fondamentale per molte delle applicazioni più popolari al mondo. Account utente, aggiornamenti di notizie e statistiche sono solo alcuni esempi dei dati che si potrebbero desiderare di archiviare e estrarre. In questo post, vedremo come collegare un'app Android a un database MySQL usando un VPS SkySilk gratuito. La nostra app per Android sarà un finto tracker dei prezzi delle azioni, mostrando il nome e il prezzo di alcuni titoli inventati.
+
+Come connettere un'app Android a un database MySQL: configurare un server MySQL
+
+Il primo passo per imparare a connettere un'app Android a un database MySQL è la configurazione del back-end. Avremo ovviamente bisogno di un server MySQL, ma avremo anche bisogno di una semplice API. La nostra app non si collegherà direttamente al database, ma dovrà inviare richieste a un'API che scriveremo. Questo semplice script accetterà la richiesta, la elaborerà e risponderà all'app. Per questo tutorial, useremo uno script PhP per la nostra API. Poiché utilizzeremo sia MySQL che PhP, il modello di stack LAMP offerto da SkySilk è perfetto per noi!
+
+LEGGI TUTTO: Come distribuire uno stack LAMP per MySQL VPS
+
+Quando il VPS è pronto per l'uso, vai all'indirizzo IP e visualizza il pannello di controllo.
+
+Fai clic su Webadmin e accedi con il nome utente "root" e la password che hai impostato durante la distribuzione del VPS. Dopo aver effettuato l'accesso, accedere alla barra degli strumenti superiore -> server -> MySQL Database Server. Vogliamo creare un nuovo database, quindi vai avanti e fai clic su "Crea un nuovo database" nel modulo in alto. Qui ci viene presentato un nuovo database da configurare.
+
+Per il bene di questo tutorial, renderemo il nostro database molto semplice. Assegna un nome al database e alla tabella come preferisci, quindi passa ai campi. Includeremo un campo ID, che è la chiave primaria e incrementi automatici. Quindi aggiungeremo altri due campi, uno per nome e uno per prezzo.
+
+
+Fai clic su Crea e il database apparirà nell'elenco dei database. Ora fai clic nel database e sarai in grado di navigare anche nella tabella creata. Fare clic su Visualizza dati, quindi aggiungere riga. Lasceremo vuoto il campo ID e creeremo un nome e un prezzo. E infine, aggiungi tutte le righe che desideri, che verranno visualizzate nella nostra app Android.
+
+
+Qui possiamo vedere che abbiamo aggiunto tre righe alla nostra tabella. Ora il nostro database ha alcuni dati che possiamo estrarre!
+
+Configurazione dell'API Web
+
+Il prossimo passo per imparare a connettere un'app Android a un database MySQL è in realtà recuperare i nostri dati. Per fare questo, scriveremo un semplice script PhP. Vai avanti e apri il tuo editor di testo o codice preferito e aggiungi il seguente codice:
+
+
+<?php
+ 
+// Create connection
+$con=mysqli_connect("localhost","username","password","dbname");
+ 
+// Check connection
+if (mysqli_connect_errno())
+{
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+ 
+// Select all of our stocks from table 'stock_tracker'
+$sql = "SELECT * FROM stock_tracker";
+ 
+// Confirm there are results
+if ($result = mysqli_query($con, $sql))
+{
+	// We have results, create an array to hold the results
+        // and an array to hold the data
+	$resultArray = array();
+	$tempArray = array();
+ 
+	// Loop through each result
+	while($row = $result->fetch_object())
+	{
+		// Add each result into the results array
+		$tempArray = $row;
+	    array_push($resultArray, $tempArray);
+	}
+ 
+	// Encode the array to JSON and output the results
+	echo json_encode($resultArray);
+}
+ 
+// Close connections
+mysqli_close($con);
+?>
+
+
+Nota: assicurarsi che nella riga 4 i parametri corrispondano alla propria configurazione. Il nome utente sarà "root", la password sarà la password MySQL che imposti durante la distribuzione del tuo VPS e "dbname" sarà come hai chiamato il tuo database. Salvare il file come "stock_service.php".
+
+Questo script creerà una connessione al database, selezionerà tutte le righe dalla tabella che abbiamo specificato e quindi genererà tutti i risultati come un array JSON. Ora deve essere aggiunto al nostro server Web affinché la nostra app possa accedervi.
+
+Passare nuovamente alla barra degli strumenti superiore, strumenti -> File Manager. Usando la barra degli strumenti in alto nella pagina, crea una nuova directory e chiamala "api".
+
+Fai clic nella nuova directory "api" e carica il file "stock_service.php". Lo script ora può essere chiamato dal suo indirizzo sul Web. Se vuoi testare il tuo script, vai a "http: //your_vps_ip_address/api/stock_service.php", ovviamente sostituendo "your_vps_ip_address" con l'IP del tuo VPS. Se tutto va bene, dovresti vedere qualcosa del tipo:
+
+L'output JSON dello script PhP del servizio di crittografia.
+
+Questo è l'array JSON che lo script genera alla fine. Ora non ci resta che costruire la nostra app Android che estrarrà questi dati e li visualizzerà in un formato molto più esteticamente gradevole.
+
+Come creare un'app Android per visualizzare i dati
+
+Apri Android Studio e crea un nuovo progetto. Assegnalo al nome che preferisci e seleziona attività vuota. La prima cosa che dobbiamo fare è consentire alla nostra app di accedere ai file su Internet. Passare al file AndroidManifest.xml e assicurarsi che disponga dell'autorizzazione utente Internet:
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skysilk.brentfaragher.stocktrackerskysilk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+
+
+Quindi, configuriamo l'interfaccia utente per la nostra app. Apri il file activity_main.xml e aggiungi il seguente codice:
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.simplifiedlearning.androidjsonparsing.MainActivity">
+ 
+ 
+    <!-- listview to display our stocks --> 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+ 
+</RelativeLayout>
+
+
+Estrazione e analisi dei dati
+
+Infine, aggiungiamo la funzionalità per estrarre e analizzare i dati dall'API Web. Apri MainActivity.java e aggiungi queste righe di codice:
+
+
+        import android.os.AsyncTask;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.widget.ArrayAdapter;
+        import android.widget.ListView;
+        import android.widget.Toast;
+ 
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
+ 
+        import java.io.BufferedReader;
+        import java.io.InputStreamReader;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+ 
+public class MainActivity extends AppCompatActivity {
+ 
+    ListView listView;
+ 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+ 
+        listView = (ListView) findViewById(R.id.listView);
+        downloadJSON("http://64.52.86.78/api/stock_service.php");
+    }
+ 
+ 
+    private void downloadJSON(final String urlWebService) {
+ 
+        class DownloadJSON extends AsyncTask<Void, Void, String> {
+ 
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+ 
+ 
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                try {
+                    loadIntoListView(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+ 
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+                    URL url = new URL(urlWebService);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+                    return sb.toString().trim();
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
+        DownloadJSON getJSON = new DownloadJSON();
+        getJSON.execute();
+    }
+ 
+    private void loadIntoListView(String json) throws JSONException {
+        JSONArray jsonArray = new JSONArray(json);
+        String[] stocks = new String[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+            stocks[i] = obj.getString("name") + " " + obj.getString("price");
+        }
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, stocks);
+        listView.setAdapter(arrayAdapter);
+    }
+}
+
+
+Discutiamo cosa succede qui.
+
+Sviluppare un'app? Leggi informazioni sul rilevamento dei problemi con GitLab e altri repository Git
+
+L'attrazione principale è la funzione downloadJSON. Inizialmente chiamiamo questa funzione e passiamo l'URL per il nostro script PhP. Quindi, dopo aver ricevuto una risposta, analizziamo i dati JSON e li aggiungiamo in un array intitolato "stock". Infine, cariciamo l'array nella nostra vista elenco.
+
+Costruisci ed esegui la tua app e dovresti vedere tutti i dati dal tuo database MySQL!
+
+L'app per Android visualizza i dati dal database MySQL. Congratulazioni, hai imparato a collegare un'app Android a un database MySQL!
+
+ 
+
+Come collegare un'app Android a un database MySQL: pensieri di chiusura
+
+Ora che abbiamo imparato come connettere un'app Android a un database MySQL, ci sono diverse cose da fare dopo:
+
+Scrivi funzionalità per inviare dati al database MySQL
+Scrivi funzionalità per modificare le righe
+Aggiungi la possibilità di eliminare le righe
+Un'ultima nota da considerare è la sicurezza. Sebbene questa app sia funzionale e utile ai fini del test, non è sicura e pronta per gli utenti live. La sicurezza stessa è un argomento enorme da ricercare e implementare correttamente prima di consentire agli utenti live di accedere a qualsiasi database che controlli.
+
+Distribuire un server LAMP self-hosted
+
+Questo è tutto per questo post. Ben fatto, e ora sai come connettere un'app Android a un database MySql!
+
+E se sei curioso di ripetere il processo su iOS, SkySilk ti copre.
+
+Ulteriori informazioni: come collegare un'app iOS a un database MySQL
