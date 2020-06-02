@@ -58,7 +58,7 @@ if($DeskLinux){
        style='background-color: white; margin-top: 0%; margin: auto' >
 <tr>
 <td> -->
-<div class="coolvetica" style="font-size: 50px; color: black; margin-left: 0%; margin-top: 20px"><b><center> Accedi </center></b></div>
+<div class="coolvetica" style="font-size: 50px; color: black; margin-left: -4%; margin-top: 20px"><b><center> Accedi </center></b></div>
 <!-- </td>
 </tr>
 </table> -->
@@ -105,6 +105,8 @@ if($DeskLinux){
 </table>
 </center>
 <!-- EOF FORM -->
+
+<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Registrati </b></a>
 
 
 </body>
