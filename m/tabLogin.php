@@ -15,7 +15,7 @@ style="background-size: cover">
 
 <?php
 
-include("/home1/ciakchep/public_html/m/lib/tabLogin.php");
+include("lib/tabLogin.php");
 
 $obj = new login();
 echo $obj->access($json);

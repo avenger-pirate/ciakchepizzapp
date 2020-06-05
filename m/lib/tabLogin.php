@@ -80,7 +80,7 @@ try{
                   //echo $_SESSION['id'];
                   echo "Accesso Effettuato";
 
-                  header("location: /home1/ciakchep/public_html/m/menu/main.php?welcome=1&email=".$email."&password=".$password."&id=".$id);
+                  header("location: dashboard.php?welcome=1&email=".$email."&password=".$password."&id=".$id);
 
              }
               else{

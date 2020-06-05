@@ -1,26 +1,20 @@
-// for this example you have to use mouse or touchscreen
-
-const app = new PIXI.Application();
-document.body.appendChild(app.view);
-const { stage } = app;
-
-// prepare circle texture, that will be our brush
+const app = new PIXI.Application();document.body.appendChild(app.view);const { stage } = app;
 const brush = new PIXI.Graphics();
 brush.beginFill(0xffffff);
 brush.drawCircle(0, 0, 50);
 brush.endFill();
 
-app.loader.add('t1', '12.jpg');
-app.loader.add('t2', '13.jpg');
+app.loader.add('sfondo', '12.jpg');//PREMI
+app.loader.add('p1', '13.jpg');app.loader.add ('p2', '14.jpg');
 app.loader.load(setup);
 
 function setup(loader, resources) {
-    const background = new PIXI.Sprite(resources.t1.texture);
+    const background = new PIXI.Sprite(resources.sfondo.texture);
     stage.addChild(background);
     background.width = app.screen.width;
     background.height = app.screen.height;
 
-    const imageToReveal = new PIXI.Sprite(resources.t2.texture);
+    const imageToReveal = new PIXI.Sprite(resources.p1.texture);
     stage.addChild(imageToReveal);
     imageToReveal.width = app.screen.width;
     imageToReveal.height = app.screen.height;

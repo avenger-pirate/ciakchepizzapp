@@ -46,14 +46,22 @@ public class Registrati extends AppCompatActivity {
                 webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
 
                 //COME BACK ACTIVITY
-                webView.setWebViewClient(new WebViewClient()
+              webView.setWebViewClient(new WebViewClient()
                 {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(Registrati.this, Home.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+                           /* Intent i = new Intent(Registrati.this, Home.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                            }
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
                         return true;
                     }
                 });
@@ -65,14 +73,23 @@ public class Registrati extends AppCompatActivity {
 
 
                 //COME BACK ACTIVITY
-                webView.setWebViewClient(new WebViewClient()
+               webView.setWebViewClient(new WebViewClient()
                 {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(Registrati.this, Home.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+                            /* Intent i = new Intent(Registrati.this, Home.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                        }
+
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
                         return true;
                     }
                 });
@@ -84,14 +101,23 @@ public class Registrati extends AppCompatActivity {
 
 
                 //COME BACK ACTIVITY
-                webView.setWebViewClient(new WebViewClient()
+               webView.setWebViewClient(new WebViewClient()
                 {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(Registrati.this, Home.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+                           /* Intent i = new Intent(Registrati.this, Home.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                        }
+
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
                         return true;
                     }
                 });

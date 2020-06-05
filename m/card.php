@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="/style/style.css" rel="stylesheet" type="text/css">
 <script src="https://www.ciakchepizza.com/m/Qrcode/jquery.min.js"></script>
 <script src="https://www.ciakchepizza.com/m/Qrcode/qrcode.js"></script>
 <script src="https://www.ciakchepizza.com/m/Qrcode/qrcode.min.js"></script>
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website" /> 
 <title> Card </title></head>
 
-<body background="img/sfondo.png"  height="100%" width="100%" 
+<body background="img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover">
 
 <?php

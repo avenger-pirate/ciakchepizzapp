@@ -46,9 +46,17 @@ public class browser extends AppCompatActivity {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(browser.this, DashBoard.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+
+                            /* Intent i = new Intent(browser.this, DashBoard.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                        }
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
                         return true;
                     }
                 });
@@ -65,9 +73,18 @@ public class browser extends AppCompatActivity {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(browser.this, DashBoard.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+
+                            /* Intent i = new Intent(browser.this, DashBoard.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                            }
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
                         return true;
                     }
                 });
@@ -84,9 +101,17 @@ public class browser extends AppCompatActivity {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         if (url.contains(url)) {
-                            Intent i = new Intent(browser.this, DashBoard.class);
+                            webView.loadUrl("https://ciakchepizza.com/m/dashboard.php");
+
+                            /* Intent i = new Intent(browser.this, DashBoard.class);
                             startActivity(i);
-                            finish();}
+                            finish(); */
+                        }
+
+                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
                         return true;
                     }
                 });

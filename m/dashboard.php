@@ -1,20 +1,24 @@
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
- <link href="style.css" rel="stylesheet" type="text/css">
+<link href="/style/style.css" rel="stylesheet" type="text/css" />
    
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <meta property="og:title" content="ciakchepizza" />
 <meta property="og:url" content="https://www.ciakchepizza.com/m/formLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
 <meta property="og:type" content="website" /> 
 <title> dahboard </title></head>
 
-<body background="img/sfondo.png"  height="100%" width="100%" 
+<body background="img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover">
 
 <?php
+
+echo "Accesso Effettuato";
 
 $iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
@@ -34,7 +38,7 @@ if($DeskLinux){
 
 ?>
 
-<div id ="pulsantiera"></div>
+<div id ="pulsantiera">
 <table>
     <td>
         <tr>
@@ -49,12 +53,6 @@ if($DeskLinux){
     </td>
 </table>
 </div>
-
-
-</center>
-<!-- EOF FORM -->
-
-</style>
 
 </body>
 </html>

@@ -15,7 +15,7 @@ style="background-size: cover">
 
 <?php
 
-include("/home1/ciakchep/public_html/m/lib/login.php");
+include("lib/login.php");
 
 $obj = new login();
 echo $obj->access();

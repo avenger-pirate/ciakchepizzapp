@@ -108,5 +108,7 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
+<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Registrati </b></a>
+
 </body>
 </html>

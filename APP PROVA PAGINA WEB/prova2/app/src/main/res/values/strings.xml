@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">prova2</string>
+
+        <string name="Log_inOK"><center>
+                                   <table>
+                                   <tr>
+                                   <td>
+                                       <div><u><b><i><center> ACCESSO EFFETTUATO </center></i></b></u></div>
+                                   </td>
+                                   </tr>
+                                  </table>
+                                  </center>
+                                  </string>
 </resources>
