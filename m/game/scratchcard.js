@@ -2,10 +2,7 @@ const app = new PIXI.Application();document.body.appendChild(app.view);const { s
 const brush = new PIXI.Graphics();
 brush.beginFill(0xffffff);
 brush.drawCircle(0, 0, 50);
-brush.endFill();
-
-app.loader.add('sfondo', '12.jpg');//PREMI
-app.loader.add('p1', '13.jpg');app.loader.add ('p2', '14.jpg');
+brush.endFill();app.loader.add('sfondo', '12.jpg');//PREMI
 app.loader.load(setup);
 
 function setup(loader, resources) {
@@ -13,8 +10,8 @@ function setup(loader, resources) {
     stage.addChild(background);
     background.width = app.screen.width;
     background.height = app.screen.height;
-
-    const imageToReveal = new PIXI.Sprite(resources.p1.texture);
+var image = new Array("13.jpg","14.jpg");var randomNum = Math.floor(Math.random()*image.length); 
+    const imageToReveal = new PIXI.Sprite(resources.'image'[randomNum].texture);
     stage.addChild(imageToReveal);
     imageToReveal.width = app.screen.width;
     imageToReveal.height = app.screen.height;

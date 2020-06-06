@@ -7,7 +7,7 @@
 
 <meta charset="UTF-8">
 <meta property="og:title" content="ciakchepizza" />
-<meta property="og:url" content="https://www.ciakchepizza.com/m/tabletFormLogin.php" />
+<meta property="og:url" content="https://www.ciakchepizza.com/m/formLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo2.png" />
 <meta property="og:type" content="website" /> 
 <title> Accedi </title></head>
@@ -73,7 +73,7 @@ if($DeskLinux){
 <tr>
 <td>
 
-<form action="tabLogin.php" type="submit" name="accedi" 
+<form action="login.php" type="submit" name="accedi" 
       method="POST" class="search" class="form_elogin" >
 
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
