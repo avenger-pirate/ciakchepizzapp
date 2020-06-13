@@ -2,15 +2,17 @@
 <html>
 
 <head>
-    <link href="style/formLogin.css" rel="stylesheet" >
-    <link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
+    <link rel="stylesheet" href="style/tabletFormLogin.css">
+<!-- <link href='https://fonts.googleapis.com/css2?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css' > -->
+
+<link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
 
 <meta charset="UTF-8">
 <meta property="og:title" content="ciakchepizza" />
-<meta property="og:url" content="https://www.ciakchepizza.com/m/formIscriviti.php" />
+<meta property="og:url" content="https://www.ciakchepizza.com/m/tabletFormLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo2.png" />
 <meta property="og:type" content="website" /> 
-<title> Registrati </title></head>
+<title> Accedi </title></head>
 
 <body background="img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover" bgproperties="fixed" >
@@ -49,7 +51,7 @@ if($DeskLinux){
 </center> -->
 <!-- EOF ACCEDI -->
 
-<img src="img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
+<img src="img/ciakchepizza_logo2.png" style="margin-top: -30px" width="900px" />
 
 <!-- ACCEDI -->
 <center>
@@ -58,54 +60,23 @@ if($DeskLinux){
        style='background-color: white; margin-top: 0%; margin: auto' >
 <tr>
 <td> -->
-<div class="coolvetica" style="font-size: 50px; color: black; margin-left: -4%; margin-top: 20px"><b><center> Registrati </center></b></div>
+<div class="coolvetica" style="font-size: 70px; color: black; margin-left: 0%; margin-top: -70px"><b><center> Registrati </center></b></div>
 <!-- </td>
 </tr>
 </table> -->
 </center>
 <!-- EOF ACCEDI -->
 
-<br /><br /><br /><br />
+<br /><br />
 
-<!-- FORM ISCRIVITI -->
+<!-- FORM DI LOGIN -->
 <center>
-<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 0px; margin: auto' >
+<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 20%; margin: auto' >
 <tr>
 <td>
 
-<form action="iscriviti.php" type="submit" name="accedi" 
+<form action="tabLogin.php" type="submit" name="accedi" 
       method="POST" class="search" class="form_elogin" >
-    
-    <input type="number" placeholder="CAP" class="form_elogin" 
-       name="cap" align="center" />
-       
-       <br />
-       
-    <input type="text" placeholder="Nome" class="form_elogin" 
-       name="nome" align="center" />
-       
-       <br />
-       
-    <input type="text" placeholder="Cognome" class="form_elogin" 
-       name="cognome" align="center" />
-       
-       <br />
-      
-    <input type="text" placeholder="Indirizzo" class="form_elogin" 
-       name="indirizzo" align="center" />
-       
-       <br />
-       
-    <input type="text" placeholder="Data" class="form_elogin" 
-       name="data" align="center" />
-       
-       <br />
-       
-    <input type="text" placeholder="Telefono" class="form_elogin" 
-       name="tel" align="center" />
-       
-       <br />
-
 
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" id="padlock" onchange="hideIcon(this);" 
@@ -126,8 +97,8 @@ if($DeskLinux){
         class="search" value="reset" > Cancel </button>
 <br />
 
-<button type="submit" name="iscriviti" class="form_elogin" 
-        class="search" > Registrati </button>
+<button type="submit" name="login" class="form_elogin" 
+        class="search" > Accedi </button>
 
 </form>
 
@@ -137,8 +108,7 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
-<a href="formLogin.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Accedi </b></a>
-
+<a href="tabletFormLogin.php" style="color: blue; font-size: 30px; margin-top: 25%; margin-left: 30%" ><b> Accedi </b></a>
 
 </body>
 </html>

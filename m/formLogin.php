@@ -74,17 +74,17 @@ if($DeskLinux){
 <td>
 
 <form action="login.php" type="submit" name="accedi" 
-      method="POST" class="search" class="form_elogin" >
+      method="POST" class="search" class="form_elogin" height="10px" >
 
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
-<input type="email" id="padlock" onchange="hideIcon(this);" 
+<input type="email" onchange="hideIcon(this);" 
        placeholder="Email" class="form_elogin" 
        name="email" align="center" />
 </img>
        
 <br />
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
-<input type="password" id="users" onchange="hideIcon(this);" 
+<input type="password" onchange="hideIcon(this);" 
        placeholder="Password" class="form_elogin" 
        name="password" align="center" />
 </img>

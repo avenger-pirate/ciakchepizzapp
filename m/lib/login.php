@@ -44,11 +44,9 @@ try{
 
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $email = $_POST['email'];
-      //$password = hash("sha512", $_POST['password']);
-      $password = $_POST['password'];
-
+      $password = hash("sha512", $_POST['password']);
+      
       $select = "SELECT psw, id FROM clienti WHERE email='$email'";
-      $psw = $password;      
                   
      //SELECT DB
       try{

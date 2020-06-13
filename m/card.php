@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/style/style.css" rel="stylesheet" type="text/css">
+<link href="/style/card.css" rel="stylesheet" type="text/css">
 <script src="https://www.ciakchepizza.com/m/Qrcode/jquery.min.js"></script>
 <script src="https://www.ciakchepizza.com/m/Qrcode/qrcode.js"></script>
 <script src="https://www.ciakchepizza.com/m/Qrcode/qrcode.min.js"></script>
@@ -34,16 +34,11 @@ if($DeskLinux){
    exit;}
    ?>
    
-<div id="qrcode"></div>
+<div id="qrcode" align="center"></div>
 <script type="text/javascript">
-new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+new QRCode(document.getElementById("qrcode"), "Token cliente");
 </script>
 <!-https://davidshimjs.github.io/qrcodejs/->
 <br>
-
-
-</center>
-<!-- EOF FORM -->
-
 </body>
 </html>

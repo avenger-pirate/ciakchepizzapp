@@ -147,3 +147,117 @@
 [05-Jun-2020 01:35:29 UTC] PHP Notice:  Undefined variable: accesso in /home1/ciakchep/public_html/m/lib/tabLogin.php on line 78
 [05-Jun-2020 01:36:08 UTC] PHP Notice:  Undefined variable: json in /home1/ciakchep/public_html/m/tabLogin.php on line 21
 [05-Jun-2020 01:36:08 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/tabLogin.php on line 62
+[06-Jun-2020 14:52:27 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:52:29 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:52:31 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:52:58 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:52:58 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:53:04 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:53:21 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:54:14 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:54:16 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[06-Jun-2020 14:54:17 UTC] PHP Parse error:  syntax error, unexpected '$iphone' (T_VARIABLE) in /home1/ciakchep/public_html/m/dashboard.php on line 1
+[09-Jun-2020 11:31:23 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: cap in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 71
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 72
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 73
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: indirizzo in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 74
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: data in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 75
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: tel in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 76
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[09-Jun-2020 11:35:20 UTC] PHP Notice:  Undefined index: cf in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 79
+[09-Jun-2020 18:25:54 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 18:30:16 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 18:37:46 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 18:43:54 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:12:20 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:13:17 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:15:52 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:16:58 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:20:03 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:20:42 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:21:57 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:23:12 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:27:20 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:29:58 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 19:30:16 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 20:03:23 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[09-Jun-2020 20:06:18 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: cap in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 71
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 72
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 73
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: indirizzo in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 74
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: data in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 75
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: tel in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 76
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 00:54:04 UTC] PHP Notice:  Undefined index: cf in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 79
+[11-Jun-2020 00:54:27 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:04:02 UTC] PHP Notice:  Undefined variable: json in /home1/ciakchep/public_html/m/tabLogin.php on line 21
+[11-Jun-2020 01:04:02 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/tabLogin.php on line 62
+[11-Jun-2020 01:04:36 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: cap in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 71
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 72
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 73
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: indirizzo in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 74
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: data in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 75
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: tel in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 76
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 01:10:30 UTC] PHP Notice:  Undefined index: cf in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 79
+[11-Jun-2020 01:10:48 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:11:05 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:12:00 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:12:32 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:15:50 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 01:16:09 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:08:02 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:08:02 UTC] PHP Notice:  Undefined index: cf in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 79
+[11-Jun-2020 02:11:18 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:11:18 UTC] PHP Notice:  Undefined variable: cf in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 158
+[11-Jun-2020 02:12:25 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:17:24 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:21:18 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:21:49 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:22:56 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:29:29 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:29:56 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:30:18 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:31:59 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:32:27 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:34:07 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:34:35 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:36:06 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:36:25 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:43:55 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:44:18 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:45:34 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 02:47:52 UTC] PHP Notice:  Undefined index: psw in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 78
+[11-Jun-2020 02:54:09 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 03:25:17 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 164
+[11-Jun-2020 03:25:17 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 166
+[11-Jun-2020 03:26:13 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 03:47:21 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 92
+[11-Jun-2020 03:47:21 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 94
+[11-Jun-2020 03:48:02 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 03:57:33 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 98
+[11-Jun-2020 03:57:33 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 100
+[11-Jun-2020 04:01:11 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 98
+[11-Jun-2020 04:01:11 UTC] PHP Notice:  Undefined variable: premi in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 100
+[11-Jun-2020 16:24:56 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 16:25:33 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 16:40:51 UTC] PHP Notice:  Undefined variable: card in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 98
+[11-Jun-2020 16:40:51 UTC] PHP Notice:  Undefined variable: card in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 100
+[11-Jun-2020 16:40:51 UTC] PHP Notice:  Undefined variable: insertCarte in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 134
+[11-Jun-2020 17:01:09 UTC] PHP Notice:  Undefined variable: insertCarte in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 136
+[11-Jun-2020 17:04:36 UTC] PHP Notice:  Undefined variable: insertCarte in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 136
+[11-Jun-2020 17:45:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:46:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:49:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:50:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:53:00 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:53:32 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 150
+[11-Jun-2020 17:56:53 UTC] PHP Notice:  Undefined index: email in /home1/ciakchep/public_html/m/lib/login.php on line 62
+[11-Jun-2020 18:14:57 UTC] PHP Notice:  Undefined variable: accesso in /home1/ciakchep/public_html/m/lib/login.php on line 78
+[11-Jun-2020 18:15:01 UTC] PHP Notice:  Undefined variable: accesso in /home1/ciakchep/public_html/m/lib/login.php on line 78
+[11-Jun-2020 18:42:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 99
+[11-Jun-2020 18:44:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 97
+[11-Jun-2020 18:46:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home1/ciakchep/public_html/m/lib/iscriviti.php on line 94

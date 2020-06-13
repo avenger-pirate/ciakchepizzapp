@@ -1,0 +1,66 @@
+body{
+font-family: 'Open Sans';
+background-image: url(/m/img/sfondo2.png);
+background-size: 100%;
+width:auto;
+height:auto;
+text-align:center;
+}
+
+#pulsantiera{
+width:auto;
+height:auto; 
+text-align: center;
+margin-right:auto; 
+margin-left:auto;
+margin-right:auto;
+margin-top: auto;
+background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+#settings{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px 3px 3px 3px;
+	width:100px;
+	height:85px;
+}
+#profile{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px 3px 3px 3px;
+	width: 100px;
+	height:85px;
+}
+#game{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius:3px 3px 3px 3px;
+	width: 100px;
+	height:85px;
+}
+
+#menu{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius:3px 3px 3px 3px;
+	width: 100px;
+	height:85px;
+}
+
+#card{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius:3px 3px 3px 3px;
+	width: 100px;
+	height:85px;
+}
+#logout{
+	background-color: rgba(255, 255, 255, 0.2);
+    border-radius:3px 3px 3px 3px;
+	width: 100px;
+	height:85px;
+}
+
+table{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	width:auto;
+}
