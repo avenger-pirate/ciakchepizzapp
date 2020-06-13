@@ -32,10 +32,12 @@ public class browser extends AppCompatActivity {
 
         String toastMsg;
         switch(screenSize) {
+            //PC DESKTOP - SCHERMI GRANDI
             case Configuration.SCREENLAYOUT_SIZE_LARGE:
                 //toastMsg = "Large screen";
                 webView.loadUrl("https://ciakchepizza.com");
                 break;
+                //SMARTPHONE - SCHERMI NORMALI
             case Configuration.SCREENLAYOUT_SIZE_NORMAL:
                 //toastMsg = "Normal screen";
                 webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
@@ -53,8 +55,49 @@ public class browser extends AppCompatActivity {
                             finish(); */
                         }
 
+
+                        if (url.contains("https://ciakchepizza.com/m/formLogin.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
+
+                        }
+
                         if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
                             webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
+
+                        //CONTROLLO DEI LINK DELLA DASHBOARD
+                        if (url.contains("https://www.ciakchepizza.com/m/menu.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/menu.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/card.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/card.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html");
+
+                        }
+
+
+
+
+                        if (url.contains("https://www.ciakchepizza.com/m/impostazioni.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/impostazioni.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/Profile.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/Profile.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/login.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/login.php");
 
                         }
                         return true;
@@ -62,6 +105,7 @@ public class browser extends AppCompatActivity {
                 });
 
             break;
+            //SMARTPHONE - SCHERMI PICCOLI
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
                 toastMsg = "Small screen";
                 webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
@@ -80,8 +124,48 @@ public class browser extends AppCompatActivity {
                             finish(); */
                             }
 
+                        if (url.contains("https://ciakchepizza.com/m/formLogin.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/formLogin.php");
+
+                        }
+
                         if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
                             webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+
+                        }
+
+
+                        //CONTROLLO DEI LINK DELLA DASHBOARD
+                        if (url.contains("https://www.ciakchepizza.com/m/menu.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/menu.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/card.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/card.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html");
+
+                        }
+
+
+
+
+                        if (url.contains("https://www.ciakchepizza.com/m/impostazioni.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/impostazioni.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/Profile.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/Profile.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/login.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/login.php");
 
                         }
 
@@ -91,6 +175,7 @@ public class browser extends AppCompatActivity {
 
                 break;
             default:
+                //TABLET
                 toastMsg = "Le dimensioni dello schermo non sono né large, ne normal, ne piccole";
                 webView.loadUrl("https://ciakchepizza.com/m/tabletFormLogin.php");
 
@@ -108,10 +193,53 @@ public class browser extends AppCompatActivity {
                             finish(); */
                         }
 
-                        if (url.contains("https://ciakchepizza.com/m/formIscriviti.php")) {
-                            webView.loadUrl("https://ciakchepizza.com/m/formIscriviti.php");
+                        if (url.contains("https://ciakchepizza.com/m/tabletFormLogin.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/tabletFormLogin.php");
 
                         }
+
+                        if (url.contains("https://ciakchepizza.com/m/tabletFormIscriviti.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/tabletFormIscriviti.php");
+
+                        }
+
+
+                        //CONTROLLO DEI LINK DELLA DASHBOARD
+                        if (url.contains("https://www.ciakchepizza.com/m/menu.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/menu.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/card.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/card.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/game/Grattaevinci/index.html");
+
+                        }
+
+
+
+
+                        if (url.contains("https://www.ciakchepizza.com/m/impostazioni.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/impostazioni.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/Profile.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/Profile.php");
+
+                        }
+
+                        if (url.contains("https://www.ciakchepizza.com/m/login.php")) {
+                            webView.loadUrl("https://www.ciakchepizza.com/m/login.php");
+
+                        }
+
+
+
                         return true;
                     }
                 });
