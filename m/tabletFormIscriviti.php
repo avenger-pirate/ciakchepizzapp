@@ -69,14 +69,48 @@ if($DeskLinux){
 
 <br /><br />
 
-<!-- FORM DI LOGIN -->
+<!-- FORM ISCRIVITI -->
 <center>
-<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 20%; margin: auto' >
+<table align="center" border="0" cellpadding="0" cellspacing="0"  class="search" style='margin-top: 0px; margin: auto' >
 <tr>
 <td>
 
-<form action="tabLogin.php" type="submit" name="accedi" 
+<form action="iscriviti.php" type="submit" name="accedi" 
       method="POST" class="search" class="form_elogin" >
+    
+    <input type="hidden" value="" class="form_elogin" 
+       name="id" align="center" />
+    
+    <input type="number" placeholder="CAP" class="form_elogin" 
+       name="cap" align="center" />
+       
+       <br />
+       
+    <input type="text" placeholder="Nome" class="form_elogin" 
+       name="nome" align="center" />
+       
+       <br />
+       
+    <input type="text" placeholder="Cognome" class="form_elogin" 
+       name="cognome" align="center" />
+       
+       <br />
+      
+    <input type="text" placeholder="Indirizzo" class="form_elogin" 
+       name="indirizzo" align="center" />
+       
+       <br />
+       
+    <input type="text" placeholder="Data" class="form_elogin" 
+       name="data" align="center" />
+       
+       <br />
+       
+    <input type="text" placeholder="Telefono" class="form_elogin" 
+       name="tel" align="center" />
+       
+       <br />
+
 
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" id="padlock" onchange="hideIcon(this);" 
@@ -97,8 +131,8 @@ if($DeskLinux){
         class="search" value="reset" > Cancel </button>
 <br />
 
-<button type="submit" name="login" class="form_elogin" 
-        class="search" > Accedi </button>
+<button type="submit" name="iscriviti" class="form_elogin" 
+        class="search" > Registrati </button>
 
 </form>
 

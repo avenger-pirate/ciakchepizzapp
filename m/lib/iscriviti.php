@@ -2,8 +2,7 @@
 
 class iscriviti{
    public function insert(){
-       $id = session_id();
-       
+
 		/*if($cap == '' || $nome == '' || $cognome == '' || 
 		   $indirizzo == '' || $data == '' || $tel == '' ||
 		   $email == '' || $psw == '' || $cf == ''){ */
@@ -15,6 +14,9 @@ class iscriviti{
       $pass='ADf3zhoHcp+T';
 
       $hostdbname="mysql:host=".$host.";dbname=".$dbname.";charset=utf8;";
+      
+      $pepe = "/'$'/j&39#/{";
+      $sale = "K%+£&aP9)K3lz";
    
       try{
          //CONNESSIONE DB
@@ -36,7 +38,7 @@ class iscriviti{
 		 $data = $_POST['data'];
 		 $tel = $_POST['tel'];
 		 $email = $_POST['email'];
-		 $psw = hash("sha512", $_POST['password']);
+		 $psw = hash("sha512", $pepe + $sale + $_POST['password']);
   }
 		 
 		 
@@ -48,7 +50,7 @@ class iscriviti{
 		 $data = $_GET['data'];
 		 $tel = $_GET['tel'];
 		 $email = $_GET['email'];
-		 $psw = hash("sha1", $_GET['password']);
+		 $psw = hash("sha1", $pepe + $sale + $_GET['password']);
 
     }
 
@@ -75,15 +77,22 @@ class iscriviti{
 
         $insert = "insert into clienti (id, cap, nome, cognome, indirizzo, data, tel, email, psw) values ('$id', '$cap', '$nome', '$cognome', '$indirizzo', '$data', '$tel', '$email', '$psw')";
         
-       $users = $stmt->rowCount();
+       $users = $stmt->rowCount()+1;
 
       //INSERT DB CLIENTI
       try{
          $stmt2 = $conn->prepare($insert);
          $stmt2->execute();
-         echo "Iscrizione Avvenuta! Complimenti. Sei Il $users+1 Utente Iscritto";
+         
+         echo $msg = "Iscrizione Avvenuta! Complimenti. Sei Il $users Utente Iscritto";
+         //sleep(10);
+          
+        header("location: dashboard.php?welcome=1&msg=".$msg."&email=".$email."&password=".$password."&id=".$id);
+        
+            $newId = $stmt2->lastInsertId();
 
-         }
+        
+      }
         
       catch(PDOException $e){
          echo $e->getMessage();

@@ -19,7 +19,6 @@ echo $n;
        
        
 //SESSIONE ID & IP
-$id = session_start();   //id = 1
 $ip = $_SERVER['REMOTE_ADDR'];
 //echo $id;
 //EOF SESSION
@@ -30,6 +29,9 @@ $user='ciakchep_gianmarco';
 $pass='ADf3zhoHcp+T';
 
 $hostdbname="mysql:host=".$host.";dbname=".$dbname.";charset=utf8;";
+
+$pepe = "/'$'/j&39#/{";
+$sale = "K%+£&aP9)K3lz";
    
 try{
    //CONNESSIONE DB
@@ -41,12 +43,14 @@ try{
        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        //echo "Connessione Riuscita!";
        //EOF CONNESSIONE DB
+       
 
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $email = $_POST['email'];
-      $password = hash("sha512", $_POST['password']);
+      $password = hash("sha512", $pepe + $sale + $_POST['password']);
       
       $select = "SELECT psw, id FROM clienti WHERE email='$email'";
+      //$psw = hash("sha1", $password);      
                   
      //SELECT DB
       try{
@@ -74,7 +78,7 @@ try{
             
             //CONTROLLO ACCESSO AL LOGIN DEL SITO ---> (main.php)
              if($accesso){
-                  $_SESSION['id'] = $riga['id'];
+                  $id = $riga['id'];
                   //echo $_SESSION['id'];
                   echo "Accesso Effettuato";
 

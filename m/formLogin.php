@@ -75,6 +75,9 @@ if($DeskLinux){
 
 <form action="login.php" type="submit" name="accedi" 
       method="POST" class="search" class="form_elogin" height="10px" >
+    
+<input type="hidden" value="" class="form_elogin" 
+      name="id" align="center" />
 
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" onchange="hideIcon(this);" 

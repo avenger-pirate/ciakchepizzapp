@@ -1,7 +1,66 @@
+
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+
+$email = $_GET['email'];
+$password = $_GET['password'];
+$id = $_GET['id'];
+echo $msg = $_GET['msg'];
+
+//SESSIONE IP
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$host ='localhost';
+$dbname='ciakchep_gianmarcoapp';
+$user='ciakchep_gianmarco';
+$pass='ADf3zhoHcp+T';
+
+$hostdbname="mysql:host=".$host.";dbname=".$dbname.";charset=utf8;";
+
+$pepe = "/'$'/j&39#/{";
+$sale = "K%+£&aP9)K3lz";
+   
+try{
+   //CONNESSIONE DB
+   $conn = new PDO($hostdbname, $user, $pass);}
+   catch(PDOException $e){
+       echo $e->getMessage();
+       echo "<br />" . "Connessione Fallita!";
+       die();}
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       //echo "Connessione Riuscita!";
+       //EOF CONNESSIONE DB
+       
+      $select = "SELECT nome, cognome FROM clienti WHERE id='$id'";
+
+      //SELECT DB
+      try{
+         $risultato = $conn->query($select);}
+      catch(PDOException $e){
+         echo $e->getMessage();
+         echo "<br />" . "Database Non Connesso!";
+         die();}
+         //echo "Database Connesso.";
+         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
+          $nome = $riga['nome'];
+          $cognome = $riga['cognome'];}
+    
+           
+    $conn = null;
+    //echo "Bentornato" . " " . $nome . " " . $cognome . "!";
+      
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html><head>
 <link href="style/dashboard.css" rel="stylesheet" type="text/css"><meta charset="UTF-8"/><meta property="og:title" content="ciakchepizza" />
-<meta property="og:url" content="https://www.ciakchepizza.com/m/dashboard.php" />
+<meta property="og:url" content="https://www.ciakchepizza.com/m/formLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
 <meta property="og:type" content="website" /> 
 <title> dashboard </title>
@@ -41,5 +100,7 @@ $('#game').click(function(){
   $(this).prop("disabled",true);
 });</script>
 </div>
+
+
 </body>
 </html>

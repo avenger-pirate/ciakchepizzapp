@@ -76,6 +76,9 @@ if($DeskLinux){
 <form action="iscriviti.php" type="submit" name="accedi" 
       method="POST" class="search" class="form_elogin" >
     
+    <input type="hidden" value="" class="form_elogin" 
+       name="id" align="center" />
+    
     <input type="number" placeholder="CAP" class="form_elogin" 
        name="cap" align="center" />
        
