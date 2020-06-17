@@ -1,0 +1,65 @@
+body{
+font-family: 'Open Sans';
+background-image: url(/m/img/sfondo2.png);
+background-size: 100%;
+width:auto;
+height:auto;
+text-align:center;
+}
+
+#categorie{
+	text-align: center;
+	width:auto;
+height:auto; 
+text-align: center;
+margin-right:auto; 
+margin-left:auto;
+margin-right:auto;
+margin-top: auto;
+background-color: rgba(255, 255, 255, 0.5);
+}
+
+table{
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	width:auto;
+}
+
+#classiche{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+#bianche{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+#rosse{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+
+#gourmet{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+#creapizza{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+
+#fritti{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}
+
+
+#bevande {
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 500px;
+}

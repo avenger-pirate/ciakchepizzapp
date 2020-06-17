@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta property="og:title" content="ciakchepizza" />
-<meta property="og:url" content="https://www.ciakchepizza.com/m/formLogin.php" />
+<meta property="og:url" content="https://www.ciakchepizza.com/m/tabLogin.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
 <meta property="og:type" content="website" /> 
 <title> Accedi </title></head>
@@ -17,8 +17,8 @@ style="background-size: cover">
 
 include("lib/tabLogin.php");
 
-$obj = new login();
-echo $obj->access($json);
+$obj = new tabLogin();
+echo $obj->access();
 
 ?>
 

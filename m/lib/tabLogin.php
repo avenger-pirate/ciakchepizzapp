@@ -3,7 +3,7 @@
     
 <?php
 
-class login{
+class tabLogin{
    public function access(){
        
 $iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
@@ -19,7 +19,6 @@ echo $n;
        
        
 //SESSIONE ID & IP
-$id = session_start();   //id = 1
 $ip = $_SERVER['REMOTE_ADDR'];
 //echo $id;
 //EOF SESSION
@@ -30,6 +29,9 @@ $user='ciakchep_gianmarco';
 $pass='ADf3zhoHcp+T';
 
 $hostdbname="mysql:host=".$host.";dbname=".$dbname.";charset=utf8;";
+
+$pepe = "/'$'/j&39#/{";
+$sale = "K%+£&aP9)K3lz";
    
 try{
    //CONNESSIONE DB
@@ -41,14 +43,14 @@ try{
        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        //echo "Connessione Riuscita!";
        //EOF CONNESSIONE DB
+       
 
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $email = $_POST['email'];
-      //$password = hash("sha512", $_POST['password']);
-      $password = $_POST['password'];
-
+      $password = hash("sha512", $pepe + $sale + $_POST['password']);
+      
       $select = "SELECT psw, id FROM clienti WHERE email='$email'";
-      $psw = $password;      
+      //$psw = hash("sha1", $password);      
                   
      //SELECT DB
       try{
@@ -58,7 +60,7 @@ try{
          echo "<br />" . "Database Non Connesso!";
          die();}
          //echo "Database Connesso.";
-         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table utenti
+         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
            $conn->quote($riga['email']);
            $conn->quote($riga['psw']);
             $conn->quote($riga['id']);
@@ -76,7 +78,7 @@ try{
             
             //CONTROLLO ACCESSO AL LOGIN DEL SITO ---> (main.php)
              if($accesso){
-                  $_SESSION['id'] = $riga['id'];
+                  $id = $riga['id'];
                   //echo $_SESSION['id'];
                   echo "Accesso Effettuato";
 
@@ -87,13 +89,13 @@ try{
                      echo $erre = "<center>
                                    <table align='center' border='1' 
                                           bordercolor='red' cellpadding='0' 
-                                          cellspacing='0' height='10px'
+                                          cellspacing='0' height='0px'
                                           width='70%' 
                                           style='background-color: white; 
-                                          margin-top: 5%' >
+                                          margin-top: 120%' >
                                    <tr>
                                    <td>
-                                   <div style='font-size: 50px; color: red'><b><i><center> Login Fallita </center></i></b>
+                                   <div style='font-size: 30px; color: red'><b><i><center> Login Fallita </center></i></b>
                                    </div>
                                    </td>
                                    </tr>
@@ -104,7 +106,6 @@ try{
             
 
 }}
-
 ?>
 
 </html>
