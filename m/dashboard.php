@@ -65,7 +65,7 @@ try{
 <meta property="og:type" content="website" /> 
 <title> dashboard </title>
 </head>
-<body >
+<body>
 <?php
 $iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
@@ -82,23 +82,45 @@ $n="<br />";echo $n;if($DeskLinux){
 <div id="pulsantiera">
 <table cellpadding="10" cellspacing="1">
 <tr>
-    <td><button id="menu"  name="Menu" width="60%" ><a href="https://www.ciakchepizza.com/m/menu.php">Vai al menu</a> </button></td>
-	<td><button id="card"  name="Card" width="60%" ><a href="https://www.ciakchepizza.com/m/card.php">Card</a> </button></td>
-	<td><button id ="game" name="Game" width="60%" ><a href="https://www.ciakchepizza.com/m/game/Grattaevinci/index.html"><img src="https://www.ciakchepizza.com/m/img/icona_gioco.png" width="70px" height="70px"></a></button></td>
+    <td><button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/menu.php'" >Vai al menu</button></td>
+	<td><button id="card"  name="Card" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/card.php'" >Card</button></td>
+	<td><button id ="game" name="Game" width="60%" onclick="ShowButton()" ><img src="https://www.ciakchepizza.com/m/img/icona_gioco.png" width="70px" height="70px"></button></td>
 
 
 </tr> <br>
 <tr>
-    <td><button id="settings"  name="Impostazioni" width="60%" ><a href="https://www.ciakchepizza.com/m/impostazioni.php"><img src="https://www.ciakchepizza.com/m/img/rotella_impostaz.png" width="70px" height="70px"></a> </button></td>
-    <td><button id="profile"   name="Profilo" width="60%" ><a href="https://www.ciakchepizza.com/m/Profile.php"><img src="https://www.ciakchepizza.com/m/img/icona_profilo.png" width="70px" height="70px"></a> </button></td>
-	<td><button id ="logout"     name="Logout" width="60%" ><a href="https://www.ciakchepizza.com/m/login.php"> Logout</a></button></td>
+    <td><button id="settings" name="Impostazioni" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/impostazioni.php'" ><img src="https://www.ciakchepizza.com/m/img/rotella_impostaz.png" width="70px" height="70px"></button></td>
+    <td><button id="profile"  name="Profilo" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/Profile.php'" ><img src="https://www.ciakchepizza.com/m/img/icona_profilo.png" width="70px" height="70px"></button></td>
+	<td><button id ="logout"  name="Logout" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/login.php'">Logout</button></td>
 </tr>
 </table>
 </div>
-<script>
-$('#game').click(function(){
-  $(this).prop("disabled",true);
-});</script>
+<SCRIPT>
+function ShowButton(){
+	today = new Date();
+let giornocorrente = today.getDay();
+if(giornocorrente==giornocorrente++){
+	document.getElementById('game').style.visibility = "true";
+		window.location.href='https://www.ciakchepizza.com/m/game/Grattaevinci/index.html';
+	} else{ document.getElementById('game').style.visibility = "false";
+	}//salvaDati();
+}
+ /*function salvaDati() {
+	today = new Date();
+var giornocorrente = today.getDay();
+var Giorno = giornocorrente.value;
+ localStorage.setItem(Giorno,day); 
+ alert("Dati salvati.");
+ mostraDati();}
+ 
+ function mostraDati(){
+var giorno= localStorage.getItem(day);
+alert(giorno);
+}*/
+	/*
+		
+	}*/
+</SCRIPT>
 </div>
 
 

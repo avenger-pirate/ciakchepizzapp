@@ -142,6 +142,8 @@ if($DeskLinux){
 
 <a href="formLogin.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Accedi </b></a>
 
+<a href="formDelete.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Delete </b></a>
+
 
 </body>
 </html>

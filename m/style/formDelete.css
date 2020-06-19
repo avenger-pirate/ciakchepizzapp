@@ -1,0 +1,21 @@
+
+.form_eDelete{
+text-align: center;
+font-size: 20px;
+width: 800px; 
+height: 50px;
+
+margin: auto;
+font-family: 'Coolvetica Rg';
+}
+
+
+
+    
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px 10px 10px 10px;}
+
+ 
