@@ -17,6 +17,13 @@ style="background-size: cover">
 
 include("lib/Delete.php");
 
+/* DEBUG */
+//time_sleep_until(time()+600); //10 minuti
+//time_sleep_until(time()+2880); //48 Minuti
+
+/* FUNZIONANTE! */
+//time_sleep_until(time()+172800); //48 ore (2 giorni)
+
 $obj = new Delete();
 echo $obj->Del();
 

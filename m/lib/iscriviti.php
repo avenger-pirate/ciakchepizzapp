@@ -38,7 +38,7 @@ class iscriviti{
 		 $data = $_POST['data'];
 		 $tel = $_POST['tel'];
 		 $email = $_POST['email'];
-		 $psw = hash("sha512", $pepe + $sale + $_POST['password']);
+		 $psw = hash("sha512", $pepe . $sale . $_POST['password']);
   }
 		 
 		 
@@ -50,7 +50,7 @@ class iscriviti{
 		 $data = $_GET['data'];
 		 $tel = $_GET['tel'];
 		 $email = $_GET['email'];
-		 $psw = hash("sha1", $pepe + $sale + $_GET['password']);
+		 $psw = hash("sha1", $pepe . $sale . $_GET['password']);
 
     }
 

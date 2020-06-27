@@ -82,14 +82,14 @@ if($DeskLinux){
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" onchange="hideIcon(this);" 
        placeholder="Email" class="form_elogin" 
-       name="email" align="center" />
+       name="email" align="center" required />
 </img>
        
 <br />
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="password" onchange="hideIcon(this);" 
        placeholder="Password" class="form_elogin" 
-       name="password" align="center" />
+       name="password" align="center" required />
 </img>
 
 <br />
@@ -109,7 +109,7 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
-<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Registrati </b></a>
+<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 18%" ><b> Registrati </b></a>
 
 <a href="formDelete.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Delete </b></a>
 

@@ -5,14 +5,6 @@
 class Delete{
    public function Del(){
        
-$iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$ipod = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$webos = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"WebOS");
-$DeskLinux = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"X11;");
-
-$width = " <script>document.write(screen.width); </script>";
-
 $n="<br />";
 //echo $n;
        
@@ -46,7 +38,7 @@ try{
 
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $email = $_POST['email'];
-      $password = hash("sha512", $pepe + $sale + $_POST['password']);}
+      $password = hash("sha512", $pepe . $sale . $_POST['password']);}
       
         $select = "SELECT * FROM clienti WHERE email='$email'";
 
@@ -74,8 +66,8 @@ try{
             $delete = "DELETE FROM clienti WHERE id='$id'";
   
        try{
+         if(($email == $mail) && ($password == $psw)){
          $stmt2 = $conn->query($delete);
-         if(($email == $mail) || ($password == $psw)){
          echo "Utente eliminato. Ci dispiace, ritorna presto.";}}
          
       catch(PDOException $e){
@@ -84,7 +76,7 @@ try{
          die();}
          
             if(($email != $mail) || ($mail == null) || ($password != $psw) || ($psw == null)){
-             echo "Utente non esistente...";}
+             echo "Utente non esistente O Credenziali Sbagliate";}
           
          
          $conn = null;

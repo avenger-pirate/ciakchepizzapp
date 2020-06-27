@@ -6,14 +6,6 @@
 class login{
    public function access(){
        
-$iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$ipod = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$webos = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"WebOS");
-$DeskLinux = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"X11;");
-
-$width = " <script>document.write(screen.width); </script>";
-
 $n="<br />";
 echo $n;
        
@@ -47,7 +39,7 @@ try{
 
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $email = $_POST['email'];
-      $password = hash("sha512", $pepe + $sale + $_POST['password']);
+      $password = hash("sha512", $pepe . $sale . $_POST['password']);
       
       $select = "SELECT psw, id FROM clienti WHERE email='$email'";
       //$psw = hash("sha1", $password);      

@@ -80,32 +80,32 @@ if($DeskLinux){
        name="id" align="center" />
     
     <input type="number" placeholder="CAP" class="form_elogin" 
-       name="cap" align="center" />
+       name="cap" align="center" required />
        
        <br />
        
     <input type="text" placeholder="Nome" class="form_elogin" 
-       name="nome" align="center" />
+       name="nome" align="center" required />
        
        <br />
        
     <input type="text" placeholder="Cognome" class="form_elogin" 
-       name="cognome" align="center" />
+       name="cognome" align="center" required />
        
        <br />
       
     <input type="text" placeholder="Indirizzo" class="form_elogin" 
-       name="indirizzo" align="center" />
+       name="indirizzo" align="center" required />
        
        <br />
        
     <input type="text" placeholder="Data" class="form_elogin" 
-       name="data" align="center" />
+       name="data" align="center" required />
        
        <br />
        
     <input type="text" placeholder="Telefono" class="form_elogin" 
-       name="tel" align="center" />
+       name="tel" align="center" required />
        
        <br />
 
@@ -113,14 +113,14 @@ if($DeskLinux){
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" id="padlock" onchange="hideIcon(this);" 
        placeholder="Email" class="form_elogin" 
-       name="email" align="center" />
+       name="email" align="center" required />
 </img>
        
 <br />
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="password" id="users" onchange="hideIcon(this);" 
        placeholder="Password" class="form_elogin" 
-       name="password" align="center" />
+       name="password" align="center" required />
 </img>
 
 <br />
@@ -140,7 +140,7 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
-<a href="formLogin.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 15%" ><b> Accedi </b></a>
+<a href="formLogin.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 23%" ><b> Accedi </b></a>
 
 <a href="formDelete.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Delete </b></a>
 

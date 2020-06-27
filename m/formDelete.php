@@ -39,24 +39,24 @@ style="background-size: cover" bgproperties="fixed" >
 <img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="email" onchange="hideIcon(this);" 
        placeholder="Email" class="form_elogin" 
-       name="email" align="center" />
+       name="email" align="center" id="email" required />
 </img>
        
 <br />
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="password" onchange="hideIcon(this);" 
        placeholder="Password" class="form_elogin" 
-       name="password" align="center" />
+       name="password" align="center" id="password" required />
 </img>
 
 <br />
 
 <button type="reset" name="reset" class="form_elogin" 
-        class="search" value="reset" > Cancel </button>
+        class="search" value="reset" id="reset" > Cancel </button>
 <br />
 
 <button type="submit" name="login" class="form_elogin" 
-        class="search" > Elimina </button>
+        class="search" onClick="change()" > Elimina </button>
 
 </form>
 
@@ -65,6 +65,19 @@ style="background-size: cover" bgproperties="fixed" >
 </table>
 </center>
 <!-- EOF FORM -->
+
+<!-- change() -->
+<!-- <div id="mes"> </div>
+
+<script>
+function change(){
+var stringa = "<br /><div class='coolvetica' class='form_eDelete' class='searchDel style='font-size: 25px; color: black; margin-left: -4%; margin-top: 50px'><b><center> Abbiamo preso in carico la sua richiesta di cancellazione, Grazie. Il suo profilo verrà cancellato entro 2 giorni. </center></b></div>";
+document.getElementById("mes").innerHTML = stringa;}
+</script> -->
+
+<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 18%" ><b> Registrati </b></a>
+
+<a href="formLogin.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Accedi </b></a>
 
 </body>
 </html>

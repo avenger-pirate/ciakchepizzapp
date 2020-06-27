@@ -67,6 +67,11 @@ public class browser extends AppCompatActivity {
                         }
 
 
+                        if(url.contains("https://ciakchepizza.com/m/formDelete.php")){
+                            webView.loadUrl("https://ciakchepizza.com/m/formDelete.php");
+                        }
+
+
                         //CONTROLLO DEI LINK DELLA DASHBOARD
                         if (url.contains("https://www.ciakchepizza.com/m/menu.php")) {
                             webView.loadUrl("https://www.ciakchepizza.com/m/menu.php");
@@ -200,6 +205,11 @@ public class browser extends AppCompatActivity {
 
                         if (url.contains("https://ciakchepizza.com/m/tabletFormIscriviti.php")) {
                             webView.loadUrl("https://ciakchepizza.com/m/tabletFormIscriviti.php");
+
+                        }
+
+                        if (url.contains("https://ciakchepizza.com/m/tabletFormDelete.php")) {
+                            webView.loadUrl("https://ciakchepizza.com/m/tabletFormDelete.php");
 
                         }
 
