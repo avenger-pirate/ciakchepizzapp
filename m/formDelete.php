@@ -30,8 +30,7 @@ style="background-size: cover" bgproperties="fixed" >
 <tr>
 <td>
 
-<form action="Delete.php" type="submit" name="accedi" 
-      method="POST" class="search" class="form_elogin" height="10px" >
+<form action="Delete.php" name="delete" method="POST" class="search" class="form_elogin" height="10px" id="confirm">
     
 <input type="hidden" value="" class="form_elogin" 
       name="id" align="center" />
@@ -55,7 +54,7 @@ style="background-size: cover" bgproperties="fixed" >
         class="search" value="reset" id="reset" > Cancel </button>
 <br />
 
-<button type="submit" name="login" class="form_elogin" 
+<button type="submit" name="delete" class="form_elogin" 
         class="search" onClick="change()" > Elimina </button>
 
 </form>
@@ -72,8 +71,9 @@ style="background-size: cover" bgproperties="fixed" >
 <script>
 function change(){
 var stringa = "<br /><div class='coolvetica' class='form_eDelete' class='searchDel style='font-size: 25px; color: black; margin-left: -4%; margin-top: 50px'><b><center> Abbiamo preso in carico la sua richiesta di cancellazione, Grazie. Il suo profilo verrà cancellato entro 2 giorni. </center></b></div>";
-document.getElementById("mes").innerHTML = stringa;}
+document.getElementById("mes").innerHTML = stringa;
 </script> -->
+
 
 <a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 18%" ><b> Registrati </b></a>
 

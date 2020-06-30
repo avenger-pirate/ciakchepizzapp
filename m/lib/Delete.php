@@ -1,5 +1,34 @@
 
+
+<!DOCTYPE html>
+<html>
     
+<!-- <center>
+<form action='Delete.php' name='checkbox' id='check' method='POST'>
+    
+<!-- <input type='hidden' name='email2' value='$email' /> -->
+
+<!-- <input type='hidden' name='password2' value='$password' />
+
+<input type='checkbox' id='si' name='si' value='si' >
+   <label for='check'>SI</label>
+</input>
+
+<br />
+
+<input type='checkbox' id='no' name='no' value='no' >
+   <label for='check'>NO</label>
+</input>
+
+<br /><br />
+
+<input type='submit' value='Conferma'>
+
+
+</form>
+</center> -->
+
+
 <?php
 
 class Delete{
@@ -40,7 +69,8 @@ try{
       $email = $_POST['email'];
       $password = hash("sha512", $pepe . $sale . $_POST['password']);}
       
-        $select = "SELECT * FROM clienti WHERE email='$email'";
+      
+      $select = "SELECT * FROM clienti WHERE email='$email'";
 
       //SELECT DB CLIENTI
       try{
@@ -61,12 +91,12 @@ try{
              $psw = $riga['psw'];
              
          }
-                
-            
-            $delete = "DELETE FROM clienti WHERE id='$id'";
-  
+       
+        $delete = "DELETE FROM clienti WHERE id='$id'";
+        
        try{
          if(($email == $mail) && ($password == $psw)){
+
          $stmt2 = $conn->query($delete);
          echo "Utente eliminato. Ci dispiace, ritorna presto.";}}
          
@@ -75,11 +105,13 @@ try{
          echo "<br />" . "Utente non eliminato o non esistente...";
          die();}
          
-            if(($email != $mail) || ($mail == null) || ($password != $psw) || ($psw == null)){
+        if(($email != $mail) || ($mail == null) || ($password != $psw) || ($psw == null)){
              echo "Utente non esistente O Credenziali Sbagliate";}
-          
-         
+
          $conn = null;
         
 }}
 ?>
+
+</body>
+</html>
