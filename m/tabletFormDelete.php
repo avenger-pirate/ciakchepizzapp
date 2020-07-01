@@ -20,7 +20,9 @@ style="background-size: cover" bgproperties="fixed" >
     
     <img src="img/ciakchepizza_logo2.png" style="margin-top: -11px" width="350px" />
     
-    <div class="coolvetica" class="form_eDelete" class="searchDel" style="font-size: 25px; color: black; margin-left: -4%; margin-top: 50px"><b><center> Inserire Email e Password per cancellare il proprio account </center></b></div>
+        <h1></h1><div class="coolvetica" style="font-size: 45px; color: black; margin-left: -4%; margin-top: 10px"><b><center> Elimina Account </center></b></div></h1>
+    
+    <div class="coolvetica" class="form_eDelete" class="searchDel" style="font-size: 25px; color: black; margin-left: -4%; margin-top: 30px"><b><center> Inserire Email e Password per cancellare il proprio account </center></b></div>
     
     <div style="margin-top: 50px"></div>
 

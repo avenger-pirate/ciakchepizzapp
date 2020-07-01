@@ -113,7 +113,7 @@ if($DeskLinux){
 
 <a href="tabletFormIscriviti.php" style="color: blue; font-size: 30px; margin-top: 25%; margin-left: 35.5%" ><b> Registrati </b></a>
 
-<a href="tabletFormDelete.php" style="color: blue; font-size: 30px; margin-top: 5%; margin-left: 7.5%" ><b> Delete </b></a>
+<a href="tabConfDelete.php.php" style="color: blue; font-size: 30px; margin-top: 5%; margin-left: 7.5%" ><b> Delete </b></a>
 
 </body>
 </html>

@@ -34,8 +34,6 @@ echo "<br /><br />
       line-height: 20px' >
       <tr>
       <td>
-      <div style='font-size: 30px; color: red'><b><i><center>  
-      
 
       <center><h1><div style='font-size: 18px; color: black; margin-top: 40px' ><i><b> Si E' Sicuri Di Questa Decisione? La Cancellazione E' Definitiva. Procedere? </b></i></div></h1></center>
       
@@ -50,7 +48,7 @@ echo "<br /><br />
       bordercolor='red' cellpadding='0' 
       cellspacing='0' height='0px'
       width='80%'
-      width='70px'
+      height='70px'
       style='background-color: white; 
       margin-top: 0%; 
       border: 4px solid red;
@@ -59,8 +57,7 @@ echo "<br /><br />
       line-height: 20px' >
       <tr>
       <td>
-      <div style='font-size: 20px; color: red'><b><i><center>  
-      
+
       <center>
       <h1><div style='font-size: 20px; color: black; margin-top: 30px' ><i><b> Vuoi veramente cancellarti dal sito? </font></b>
       <br /><br />
