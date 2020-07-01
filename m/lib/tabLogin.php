@@ -82,7 +82,7 @@ try{
                   //echo $_SESSION['id'];
                   echo "Accesso Effettuato";
 
-                  header("location: dashboard.php?welcome=1&email=".$email."&password=".$password."&id=".$id);
+                  header("location: /m/dashboard/dashboard.php?welcome=1&email=".$email."&password=".$password."&id=".$id);
 
              }
               else{

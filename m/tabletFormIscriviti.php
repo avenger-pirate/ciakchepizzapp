@@ -142,9 +142,9 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
-<a href="tabletFormLogin.php" style="color: blue; font-size: 30px; margin-top: 25%; margin-left: 37.5%" ><b> Accedi </b></a>
+<a href="formModPsw.php" style="color: blue; font-size: 15px; margin-top: 5%; margin-left: 15px" ><b> Password Dimenticata </b></a>
 
-<a href="tabletFormDelete.php" style="color: blue; font-size: 30px; margin-top: 5%; margin-left: 9.5%" ><b> Delete </b></a>
+<a href="tabletFormLogin.php" style="color: black; font-size: 30px; margin-top: 25%; margin-left: 35.5%" ><b> Accedi </b></a>
 
 </body>
 </html>
