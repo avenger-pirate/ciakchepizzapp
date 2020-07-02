@@ -109,11 +109,11 @@ if($DeskLinux){
 </center>
 <!-- EOF FORM -->
 
-<a href="formIscriviti.php" style="color: blue; font-size: 20px; margin-top: 25%; margin-left: 18%" ><b> Registrati </b></a>
+<a href="formModPsw.php" style="color: blue; font-size: 15px; margin-top: 5%; margin-left: 15px" ><b> Password Dimenticata </b></a>
 
-<!-- <a href="formModPsw.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Password Dimenticata </b></a> -->
+<a href="formIscriviti.php" style="color: black; font-size: 20px; margin-top: 35%; margin-left: 20px" ><b> Registrati </b></a>
 
-<a href="formConfDelete.php" style="color: blue; font-size: 20px; margin-top: 5%; margin-left: 15%" ><b> Delete </b></a>
+
 
 
 </body>
