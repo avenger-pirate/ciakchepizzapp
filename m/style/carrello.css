@@ -1,0 +1,33 @@
+body {
+font-family: 'Open Sans';
+background-image: url(/m/img/sfondo2.png);
+background-size: 100%;
+width:100%;
+text-align:center;
+height:100%;
+text-align:center;
+}
+
+#upleft{
+
+	float:left; display:block;
+}
+
+#upright{
+	float:right; display:block;
+}
+
+#intestazione{
+	text-align: center;
+}
+
+#main{
+	text-align: center;
+	background-size: 100%;
+	background-image: url(/m/img/tabella.png);
+    background-color: rgba(255, 255, 255, 0.5);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+

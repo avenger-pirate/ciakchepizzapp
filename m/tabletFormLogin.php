@@ -116,5 +116,24 @@ if($DeskLinux){
 <a href="tabletFormIscriviti.php" style="color: black; font-size: 30px; margin-top: 25%; margin-left: 35.5%" ><b> Registrati </b></a>
 
 
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+  
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
+
 </body>
 </html>

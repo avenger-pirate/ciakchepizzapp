@@ -23,7 +23,7 @@ $n="<br />";echo $n;if($DeskLinux){
  ?>
 <img src="/m/img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
 <br>
-<div id="categorie">
+<nome nome="categorie" id="categ">
 <table>
 <tr>
 <td><button id="classiche" onclick="window.location.href='https://www.ciakchepizza.com/m/menu/classiche.php'">Le Classiche</a></button></td>
@@ -46,8 +46,28 @@ $n="<br />";echo $n;if($DeskLinux){
 <tr>
 <td><button id="bevande" onclick="window.location.href='https://www.ciakchepizza.com/m/menu/bevande.php'">Bevande</button></td>
 </tr>
+
 <table>
-</div>
+</form>
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+
+
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="/m/img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
 
 </body>
 </html>

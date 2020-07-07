@@ -1,6 +1,11 @@
 
 <?php
 
+$oggi = time();
+$dopoDomani = time() + 172800;
+
+if($oggi){
+
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
 
@@ -82,12 +87,12 @@ $n="<br />";echo $n;if($DeskLinux){
  ?>
 <img src="/m/img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
 <br>
-<div id="pulsantiera">
+<form name="pulsantiera">
 <table cellpadding="10" cellspacing="1">
 <tr>
     <td><button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'" >Vai al menu</button></td>
 	<td><button id="card"  name="Card" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/card.php'" >Card</button></td>
-	<td><button id ="game" name="Game" width="60%" onclick="ShowButton()" ><img src="https://www.ciakchepizza.com/m/img/icona_gioco.png" width="70px" height="70px"></button></td>
+	<td><button id ="game" name="Game" width="60%" onclick="" ><img src="https://www.ciakchepizza.com/m/img/icona_gioco.png" width="70px" height="70px"></button></td>
 
 
 </tr> <br>
@@ -97,34 +102,52 @@ $n="<br />";echo $n;if($DeskLinux){
 	<td><button id ="logout"  name="Logout" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/login.php'">Logout</button></td>
 </tr>
 </table>
-</div>
-<SCRIPT>
-function ShowButton(){
-	today = new Date();
-let giornocorrente = today.getDay();
-if(giornocorrente==giornocorrente++){
-	document.getElementById('game').style.visibility = "true";
-		window.location.href='https://www.ciakchepizza.com/m/dashboard/game/Grattaevinci/index.html';
-	} else{ document.getElementById('game').style.visibility = "false";
-	}//salvaDati();
+</form>
+
+
+<?php
+
+
 }
- /*function salvaDati() {
-	today = new Date();
-var giornocorrente = today.getDay();
-var Giorno = giornocorrente.value;
- localStorage.setItem(Giorno,day); 
- alert("Dati salvati.");
- mostraDati();}
- 
- function mostraDati(){
-var giorno= localStorage.getItem(day);
-alert(giorno);
-}*/
-	/*
-		
-	}*/
-</SCRIPT>
-</div>
+
+else{
+
+time_sleep_until(time(), 172800);  
+
+?>
+
+<script>
+
+pulsantiera.Game.disabled=true;
+
+</script>
+
+<?php
+
+}
+
+?>
+
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+
+
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="/m/img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
 
 
 </body>

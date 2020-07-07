@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <link href="style/formLogin.css" rel="stylesheet" >
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
@@ -100,3 +103,26 @@ echo "<br /><br />
 <br />";
 
 ?>
+
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+  
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
+
+</body>
+</html>

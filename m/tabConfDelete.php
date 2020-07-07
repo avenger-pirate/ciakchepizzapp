@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <link href="style/tabletFormLogin.css" rel="stylesheet" >
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
@@ -15,7 +18,6 @@ style="background-size: cover" bgproperties="fixed" >
 <img src="img/ciakchepizza_logo2.png" style="margin-top: -11px" width="350px" />
 
 <div class="coolvetica" style="font-size: 70px; color: black; margin-left: 0%; margin-top: 10px"><b><center> Conferma </center></b></div>
-
 
 
 <?php
@@ -102,3 +104,26 @@ echo "<br /><br />
 <br />";
 
 ?>
+
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+  
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
+
+</body>
+</html>

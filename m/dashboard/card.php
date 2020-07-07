@@ -9,12 +9,13 @@
 <meta charset="UTF-8">
 <meta property="og:title" content="ciakchepizza" />
 <meta property="og:url" content="https://www.ciakchepizza.com/m/dashboard/card.php" />
-<meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfond.png/>
+<meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfond.png" />
 <meta property="og:type" content="website" /> 
 <title> Card </title></head>
 
 <body background="/m/img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover">
+
 
 <?php
 
@@ -40,5 +41,26 @@ new QRCode(document.getElementById("qrcode"), "Token cliente");
 </script>
 <!-https://davidshimjs.github.io/qrcodejs/->
 <br>
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+  
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="/m/img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
+
+
 </body>
 </html>

@@ -49,6 +49,27 @@ if($DeskLinux){
    exit;}
    
 ?>
+
+
+
+<!-- BOTTONE BACK -->  
+<script>
+
+function goBack() {
+  window.history.back();}
+
+
+</script>
+
+<br /><br />
+
+<center><button onclick="goBack()" >
+    
+    <img src="/m/img/back.png" alt="back" width="30px" height="30px" />
+    
+</button></center>
+<!-- EOF BOTTONE BACK -->
+
    
 
 </body>
