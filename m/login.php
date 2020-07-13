@@ -15,10 +15,25 @@ style="background-size: cover">
 
 <?php
 
+session_start();
+
 include("lib/login.php");
 
+if($_SESSION['id'] != $id)
+    header("Location: /m/formLogin.php");
+    
+else{
+
 $obj = new login();
-echo $obj->access();
+echo $obj->access();}
+
+            /*session_unset();
+            session_destroy();
+            unset();
+            
+            session_unset($_SESSION['id']);
+            session_destroy($_SESSION['id']);
+            unset($_SESSION['id']); */
 
 ?>
 

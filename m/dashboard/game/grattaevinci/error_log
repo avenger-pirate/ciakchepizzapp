@@ -1,0 +1,51 @@
+[11-Jul-2020 02:48:32 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 29
+[11-Jul-2020 02:48:32 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[11-Jul-2020 02:48:32 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[11-Jul-2020 02:48:32 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[11-Jul-2020 02:54:47 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 29
+[11-Jul-2020 02:54:47 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[11-Jul-2020 02:54:47 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[11-Jul-2020 02:54:47 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[11-Jul-2020 02:59:35 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 29
+[11-Jul-2020 02:59:35 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[11-Jul-2020 02:59:35 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[11-Jul-2020 02:59:35 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[11-Jul-2020 03:07:41 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 29
+[11-Jul-2020 03:07:41 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[11-Jul-2020 03:07:41 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[11-Jul-2020 03:07:41 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[13-Jul-2020 17:58:30 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[13-Jul-2020 17:58:30 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[13-Jul-2020 17:58:30 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[13-Jul-2020 17:58:30 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:09:36 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:09:57 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[13-Jul-2020 18:09:57 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[13-Jul-2020 18:09:57 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[13-Jul-2020 18:09:57 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:09:59 UTC] PHP Notice:  Undefined index: id in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 30
+[13-Jul-2020 18:09:59 UTC] PHP Notice:  Undefined index: nome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 31
+[13-Jul-2020 18:09:59 UTC] PHP Notice:  Undefined index: cognome in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 32
+[13-Jul-2020 18:09:59 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:14:27 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:17:57 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:18:33 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:18:58 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:21:35 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:21:35 UTC] PHP Notice:  Undefined variable: oggi in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 37
+[13-Jul-2020 18:21:35 UTC] PHP Notice:  Undefined variable: conn in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 41
+[13-Jul-2020 18:21:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php:41
+Stack trace:
+#0 {main}
+  thrown in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 41
+[13-Jul-2020 18:23:25 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:23:49 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:26:49 UTC] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 33
+[13-Jul-2020 18:26:49 UTC] PHP Notice:  Undefined variable: oggi in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 37
+[13-Jul-2020 18:26:49 UTC] PHP Notice:  Undefined variable: conn in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 41
+[13-Jul-2020 18:26:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php:41
+Stack trace:
+#0 {main}
+  thrown in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 41
+[13-Jul-2020 20:30:30 Europe/Rome] PHP Notice:  Undefined index: Game in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 101
+[13-Jul-2020 20:30:30 Europe/Rome] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home1/ciakchep/public_html/m/dashboard/game/grattaevinci/index.php on line 116

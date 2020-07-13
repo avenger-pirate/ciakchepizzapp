@@ -1,18 +1,59 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    
+<link href="/m/style/dashboard.css" rel="stylesheet" type="text/css"><meta charset="UTF-8"/><meta property="og:title" content="ciakchepizza" />
+<meta property="og:url" content="https://www.ciakchepizza.com/m/dashboard/dahsboard.php" />
+<meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
+<meta property="og:type" content="website" /> 
+<title> dashboard </title>
+</head>
+
+<body background="/m/img/sfondo2.png"  height="100%" width="100%" 
+style="background-size: cover" bgproperties="fixed" >
+    
+<script>    
+    if(typeof window.history.pushState == 'function') {
+        window.history.pushState({}, "Hide", 
+        '<?php echo $_SERVER['PHP_SELF']; ?>');
+    }
+</script>
+    
+
 <?php
 
-$oggi = time();
-$dopoDomani = time() + 172800;
+session_start();
+session_id();
 
-if($oggi){
+date_default_timezone_set('Europe/Rome');
+  
+$fileNow = "oggi.txt";
+$oggi = date('d-m-Y H:i:s');
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
+   if($_GET['logout'] == 'true')
+      echo $_GET['message'];
 
 
 $email = $_GET['email'];
 $password = $_GET['password'];
 $id = $_GET['id'];
-echo $msg = $_GET['msg'];
+
+if((!isset($id)) && (!isset($email)) && (!isset($password))){
+    
+    session_unset();
+    session_destroy();
+    //unset();
+            
+    session_unset($_SESSION['id']);
+    session_destroy($_SESSION['id']);
+    unset($_SESSION['id']);
+    header("Location: /m/formLogin.php?logout=true&message=Utente%20Non%20Loggato");
+    die();
+    exit();}
+    
+}
 
 //SESSIONE IP
 $ip = $_SERVER['REMOTE_ADDR'];
@@ -38,9 +79,11 @@ try{
        //echo "Connessione Riuscita!";
        //EOF CONNESSIONE DB
        
-      $select = "SELECT nome, cognome FROM clienti WHERE id='$id'";
+       
+       
+      $select = "SELECT nome, cognome, id FROM clienti WHERE email='$email'";
 
-      //SELECT DB
+      //SELECT DB FROM CLIENT
       try{
          $risultato = $conn->query($select);}
       catch(PDOException $e){
@@ -50,105 +93,161 @@ try{
          //echo "Database Connesso.";
          if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
           $nome = $riga['nome'];
-          $cognome = $riga['cognome'];}
+          $cognome = $riga['cognome'];
+          $id = $riga['id'];}
+          
+          
+          
+          
+      $selectGame = "SELECT nome, cognome, time FROM game WHERE id='$id'";
+
+      //SELECT DB FROM GAME
+      try{
+         $selRisultato = $conn->query($selectGame);}
+      catch(PDOException $e){
+         echo $e->getMessage();
+         die();}
+         //echo "Database Connesso.";
+         if($riga2 = $selRisultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table game
+             $time = $riga2['time'];}
+             
+         // Store Session Data
+          $_SESSION['email'] = $email;
+          $_SESSION['nome'] = $nome;
+          $_SESSION['cognome'] = $cognome;
+          $_SESSION['password'] = $password;
+          $_SESSION['id'] = $id;
+          
+
+?>
+
+
+<img src="/m/img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
+<br>
+<table cellpadding="10" cellspacing="1">
+<tr>
+    <td>
+        <form action="menu.php" method="GET">
+	    <input type="hidden" value="" />
+        <button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'" >Vai al menu</button></td>
+        </form>
+	<td>
+        <form action="card.php" method="GET">
+	    <input type="hidden" value="" />
+	    <button id="card"  name="Card" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/card.php'" >Card</button></td>
+	    </form>
+	
+	<!-- <tr> -->
+    <td>
+        <form action="impostazioni.php" method="GET">
+        <input type="hidden" value="" />
+        <button id="settings" name="Impostazioni" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/impostazioni.php'" ><img src="https://www.ciakchepizza.com/m/img/rotella_impostaz.png" width="70px" height="70px"></button></td>
+        </form>
+    </tr>
+    <tr>
+    <td>
+        <form action="profile.php" method="GET">
+        <input type="hidden" value="" />
+        <button id="profile"  name="Profilo" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/Profile.php'" ><img src="https://www.ciakchepizza.com/m/img/icona_profilo.png" width="70px" height="70px">
+        </button></td>
+        </form>
+        
+        
+<?php
+
+ echo "<td>
+
+       <form action='logout.php' method='POST' name='Disconnect' >
+	   <input type='hidden' name='id' value='$id' />
+	   <input type='hidden' name='nome' value='$nome' />
+	   <input type='hidden' name='cognome' value='$cognome' />
+
+       <button type='submit' id='logout' width='60%' name='Logout' > Logout 
+       </button>
+       
+       </form>
+	   </td>";
+	   
+
+//DEBUGGING	   
+/* echo $riga['id']."_DB";
+echo "<br/>";
+echo $riga['nome']."_DB";
+echo "<br/>";
+echo $riga['cognome']."_DB";
+echo "<br/>";
+echo $time; */
+
+if(!isset($time)){
+
+ echo "<td>
+
+       <form action='game/grattaevinci/' method='GET' name='Game1' >
+	   <input type='hidden' name='id' value='$id' />
+	   <input type='hidden' name='nome' value='$nome' />
+	   <input type='hidden' name='cognome' value='$cognome' />
+	   <input type='hidden' name='email' value='$email' />
+	   <input type='hidden' name='password' value='$password' />
+
+       <button type='submit' id='game1' width='60%' name='click1'value='true' > 
+       <img src='/m/img/icona_gioco.png' width='70px' height='70px' >
+       </button>
+       
+       </form>
+       </td>
+       
+       </tr>
+       </table>";
+
+    }
+
+elseif(isset($time)){
     
-           
+//time_sleep_until(time(), 172800);
+time_sleep_until(time(), 86400);
+
+
+?>
+
+   
+
+       <td>
+
+       <form action='deleteTime.php' method='GET' name='Game0' >
+
+       <button type='submit' id='game0' width='60%' name='click0' > 
+       <img src='/m/img/icona_gioco.png' width='70px' height='70px' >
+       </button>
+       
+       </form>
+       </td>
+       
+       </tr>
+       </table>
+              
+
+<script>
+
+document.getElementById("game0").disabled = true;
+
+</script>
+              
+ 
+
+<?php
+
     $conn = null;
     //echo "Bentornato" . " " . $nome . " " . $cognome . "!";
       
-}
-
-
-?>
-
-
-<!DOCTYPE html>
-<html><head>
-<link href="/m/style/dashboard.css" rel="stylesheet" type="text/css"><meta charset="UTF-8"/><meta property="og:title" content="ciakchepizza" />
-<meta property="og:url" content="https://www.ciakchepizza.com/m/dashboard/dahsboard.php" />
-<meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfondo.png" />
-<meta property="og:type" content="website" /> 
-<title> dashboard </title>
-</head>
-
-<body background="/m/img/sfondo2.png"  height="100%" width="100%" 
-style="background-size: cover" bgproperties="fixed" >
+    }
     
-<?php
-$iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$ipod = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$webos = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"WebOS");
-$DeskLinux = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"X11;");
-$width = " <script>document.write(screen.width); </script>"; 
-$n="<br />";echo $n;if($DeskLinux){
-   header("Location: https://ciakchepizza.com");
-   exit;}
- ?>
-<img src="/m/img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
-<br>
-<form name="pulsantiera">
-<table cellpadding="10" cellspacing="1">
-<tr>
-    <td><button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'" >Vai al menu</button></td>
-	<td><button id="card"  name="Card" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/card.php'" >Card</button></td>
-	<td><button id ="game" name="Game" width="60%" onclick="" ><img src="https://www.ciakchepizza.com/m/img/icona_gioco.png" width="70px" height="70px"></button></td>
-
-
-</tr> <br>
-<tr>
-    <td><button id="settings" name="Impostazioni" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/impostazioni.php'" ><img src="https://www.ciakchepizza.com/m/img/rotella_impostaz.png" width="70px" height="70px"></button></td>
-    <td><button id="profile"  name="Profilo" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/Profile.php'" ><img src="https://www.ciakchepizza.com/m/img/icona_profilo.png" width="70px" height="70px"></button></td>
-	<td><button id ="logout"  name="Logout" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/login.php'">Logout</button></td>
-</tr>
-</table>
-</form>
-
-
-<?php
-
-
-}
-
-else{
-
-time_sleep_until(time(), 172800);  
-
+  session_unset();
+  session_destroy();
+  session_destroy($_SESSION['id']);
+  unset($_SESSION['id']);
+  clearstatcache();
+  
 ?>
-
-<script>
-
-pulsantiera.Game.disabled=true;
-
-</script>
-
-<?php
-
-}
-
-?>
-
-
-
-<!-- BOTTONE BACK -->  
-<script>
-
-function goBack() {
-  window.history.back();}
-
-
-</script>
-
-<br /><br />
-
-<center><button onclick="goBack()" >
-    
-    <img src="/m/img/back.png" alt="back" width="30px" height="30px" />
-    
-</button></center>
-<!-- EOF BOTTONE BACK -->
-
-
 
 </body>
 </html>

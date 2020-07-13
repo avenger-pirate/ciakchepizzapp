@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+    
 <head>
     <link href="style/formLogin.css" rel="stylesheet" >
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
@@ -17,6 +17,14 @@ style="background-size: cover" bgproperties="fixed" >
 
 <?php
 
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+if($_GET['logout'] == 'true'){
+    echo "<div style='font-size: 20px; float: left; margin-left: 900px; margin-top: 0px; position: absolute; color: black'><h1><b>"
+    . $msg = $_GET['message'] . "</h1></b></div>";}}
+
+
 $iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
 $ipod = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
@@ -28,9 +36,9 @@ $width = " <script>document.write(screen.width); </script>";
 $n="<br />";
 echo $n;
 
-if($DeskLinux){
+/*if($DeskLinux){
    header("Location: https://ciakchepizza.com");
-   exit;}
+   exit;} */
    
 
 ?>
@@ -73,7 +81,7 @@ if($DeskLinux){
 <tr>
 <td>
 
-<form action="login.php" type="submit" name="accedi" 
+<form action="login.php" name="accedi" 
       method="POST" class="search" class="form_elogin" height="10px" >
     
 <input type="hidden" value="" class="form_elogin" 
@@ -133,6 +141,12 @@ function goBack() {
 </button></center>
 <!-- EOF BOTTONE BACK -->
 
+<?php
+
+session_unset();
+session_destroy();
+
+?>
 
 </body>
 </html>

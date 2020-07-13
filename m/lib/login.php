@@ -6,6 +6,9 @@
 class login{
    public function access(){
        
+session_start();
+session_id();
+       
 $n="<br />";
 echo $n;
        
@@ -71,10 +74,11 @@ try{
             //CONTROLLO ACCESSO AL LOGIN DEL SITO ---> (main.php)
              if($accesso){
                   $id = $riga['id'];
+                  $_SESSION['id'] = $id;
                   //echo $_SESSION['id'];
                   echo "Accesso Effettuato";
 
-                  header("location: /m/dashboard/dashboard.php?welcome=1&email=".$email."&password=".$password."&id=".$id);
+                  header("location: /m/dashboard/dashboard.php?access=true&email=".$email."&password=".$password."&id=".$id);
 
              }
               else{
@@ -95,6 +99,7 @@ try{
                                   </center>";}
                                   
             //EOF CONTROLLO ACCESSO AL LOGIN DEL SITO
+            
             
 
 }}
