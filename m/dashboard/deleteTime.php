@@ -1,14 +1,12 @@
 <?php
 
-<?php
-
 date_default_timezone_set('Europe/Rome');
   
 $fileNow = "oggi.txt";
 $oggi = date('d-m-Y H:i:s');
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    if($_GET['click1'] == 'true')
+    if($_GET['click1'] == 'false')
        echo "Timer Attivato!";    
 
 $email = $_GET['email'];
@@ -77,17 +75,16 @@ try{
      $id = $_GET['id'];
      $nome = $_GET['nome'];
      $cognome = $_GET['cognome'];
-     echo $Game = $_GET['Game'];
 
-     $deleteGame = "DELETE FROM 'game' WHERE 'id'='$id'";
+     $deleteGame = "DELETE FROM game WHERE id='$id'";
 
     //DELETE DB FROM GAME TIME
-      try{
-         $stmt = $conn->prepare($deleteTime);
+     try{
+         $stmt = $conn->prepare($deleteGame);
          $stmt->execute();}
       catch(PDOException $e){
          echo $e->getMessage();
-         echo "<br />" . "Insert Non Inserita!";
+         echo "<br />" . "Time non cancellato";
          die();}
          
      $insertTime = "INSERT IGNORE INTO game (id, nome, cognome, time) VALUES ('$id', '$nome', '$cognome', '$oggi')";

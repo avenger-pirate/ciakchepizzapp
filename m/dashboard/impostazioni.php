@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="style/formLogin.css" rel="stylesheet" >
+<link href='https://fonts.googleapis.com/css2?family=Open+Sans' rel='stylesheet' type='text/css' > 
 <link href="/style/card.css" rel="stylesheet" type="text/css">
 <script src="https://www.ciakchepizza.com/m/Qrcode/jquery.min.js"></script>
 <script src="https://www.ciakchepizza.com/m/Qrcode/qrcode.js"></script>
@@ -17,21 +19,49 @@
 
 <body background="/m/img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover">
-
-<br /><br />
-
-<center>
-<a href="/m/formModPsw.php" style="color: blue; font-size: 35px; margin-top: 50px; margin-left: 0px" ><b> Modifica Password </b></a>
-
-
-<br />
-
-<a href="/m/formConfDelete.php" style="color: blue; font-size: 35px; margin-top: 5px; text-align: center; margin-left: 0px" ><b> Delete </b></a>
-
-</center>
-
-
+    
 <?php
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    $id = $_GET['id'];
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+    $nome = $_GET['nome'];
+    $cognome = $_GET['cognome'];}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
+    
+    
+echo "<br /><br />
+
+      <center>
+      <form action='/m/formModPsw.php' method='POST' name='Modifica' class='search' class='form_elogin' >
+	    <input type='hidden' name='id' value='$id' />
+	    <input type='hidden' name='password' value='$password' />
+	    <input type='hidden' name='nome' value='$nome' />
+	    <input type='hidden' name='cognome' value='$cognome' />        
+	    <button id='Update' name='modifica' value='true' width='60px' onclick='window.location.href='https://www.ciakchepizza.com/m/formModPsw.php'' style='color: blue; font-size: 55px; margin-top: 50px; margin-left: 0px; background-color: orange; color: white' > Modifica Password
+	    </button>
+	  </td>
+      </form>
+      </center>";
+      
+      
+echo "<br /><br />
+
+      <center>
+      <form action='/m/formConfDelete.php' method='POST' name='Delete' class='search' class='form_elogin' >
+	    <button id='Cancella' name='delete' width='48px' onclick='window.location.href='https://www.ciakchepizza.com/m/formConfDelete.php'' style='color: blue; font-size: 55px; margin-top: 5px; text-align: center; margin-left: 0px; background-color: orange; color: white; display: block; width: 480px; height: 70px; border: none; padding: 3px 28px; cursor: pointer; text-align: center;' > Delete
+	    </button>
+	  </td>
+      </form>
+      </center>";}
+
 
 $iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
@@ -69,8 +99,6 @@ function goBack() {
     
 </button></center>
 <!-- EOF BOTTONE BACK -->
-
-   
 
 </body>
 </html>

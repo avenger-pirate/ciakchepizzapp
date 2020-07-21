@@ -58,11 +58,5 @@ function goBack() {
 </div>
 
 
-
-<!-- BOTTONE BACK -->  
-
-
-
-
 </body>
 </html>

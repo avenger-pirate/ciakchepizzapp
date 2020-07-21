@@ -84,10 +84,10 @@ class iscriviti{
          $stmt2 = $conn->prepare($insert);
          $stmt2->execute();
          
-         echo $msg = "Iscrizione Avvenuta! Complimenti. Sei Il $users Utente Iscritto";
+         echo $msg = "Iscrizione_Avvenuta!_Complimenti!_Sei_Il_$users-Utente_Iscritto";
          //sleep(10);
           
-        header("location: dashboard.php?welcome=1&msg=".$msg."&email=".$email."&password=".$password."&id=".$id);
+        header("location: /m/dashboard/dashboard.php?welcome=".$nome."&msg=".$msg."&email=".$email."&password=".$password."&id=".$id);
         
             $newId = $stmt2->lastInsertId();
 

@@ -25,6 +25,17 @@ style="background-size: cover" bgproperties="fixed" >
     <div class="coolvetica" class="form_eDelete" class="searchDel" style="font-size: 25px; color: black; margin-left: -4%; margin-top: 30px"><b><center> Inserire Nuova Password </center></b></div>
     
     <div style="margin-top: 50px"></div>
+    
+    <?php
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];}
+    
+?>
 
 <!-- FORM DI DELETE -->
 <center>
@@ -32,22 +43,36 @@ style="background-size: cover" bgproperties="fixed" >
 <tr>
 <td>
 
-<form action="Delete.php" name="delete" method="POST" class="search" class="form_elogin" height="10px" id="confirm">
+<form action="modPsw.php" name="Modifica" method="GET" class="search" class="form_elogin" height="10px" id="confirm">
     
-<input type="hidden" value="" class="form_elogin" 
-      name="id" align="center" />
+<img src="img/users.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
+<input type="email" onchange="hideIcon(this);" 
+       placeholder="Email" class="form_elogin" 
+       name="email" align="center" id="email" required />
+       
+<br />
+
+<?php
+
+echo "<input type='hidden' name='id' value='$id' />
+<input type='hidden' name='password' value='$password' />
+<input type='hidden' name='nome' value='$nome' />
+<input type='hidden' name='cognome' value='$cognome' />"; 
+
+?>
+
 
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="password" onchange="hideIcon(this);" 
-       placeholder="Digita Password" class="form_elogin" 
+       placeholder="Vecchia Password" class="form_elogin" 
        name="password" align="center" id="password" required />
 </img>
        
 <br />
 <img src="img/padlock.png" width="30px" height="30px" style="position: absolute; float: left; margin-left: 5px; margin-top: 6px">
 <input type="password" onchange="hideIcon(this);" 
-       placeholder="Ripeti Password" class="form_elogin" 
-       name="rptPsw" align="center" id="rptPsw" required />
+       placeholder="Nuova Password" class="form_elogin" 
+       name="nuovaPsw" align="center" id="newPsw" required />
 </img>
 
 <br />

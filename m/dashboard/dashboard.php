@@ -138,11 +138,25 @@ try{
 	    </form>
 	
 	<!-- <tr> -->
-    <td>
-        <form action="impostazioni.php" method="GET">
-        <input type="hidden" value="" />
-        <button id="settings" name="Impostazioni" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/impostazioni.php'" ><img src="https://www.ciakchepizza.com/m/img/rotella_impostaz.png" width="70px" height="70px"></button></td>
-        </form>
+
+<?php	
+	
+	echo "<td>
+        <form action='impostazioni.php' method='POST' name='Settings' >
+	    <input type='hidden' name='id' value='$id' />
+	    <input type='hidden' name='password' value='$password' />
+	    <input type='hidden' name='nome' value='$nome' />
+	    <input type='hidden' name='cognome' value='$cognome' />        
+	    <button id='settings' name='Impostazioni' width='60% onclick='window.location.href='https://www.ciakchepizza.com/m/dashboard/impostazioni.php'' >
+	    <img src='https://www.ciakchepizza.com/m/img/rotella_impostaz.png' width='70px' height='70px'>
+	    </button>
+	</td>
+        </form>";
+	   
+?>
+	
+	
+
     </tr>
     <tr>
     <td>
@@ -178,7 +192,7 @@ echo $riga['cognome']."_DB";
 echo "<br/>";
 echo $time; */
 
-if(!isset($time)){
+if(empty($time)){
 
  echo "<td>
 
@@ -201,21 +215,25 @@ if(!isset($time)){
 
     }
 
-elseif(isset($time)){
+elseif(!empty($time)){
     
+//DEBUG
+//time_sleep_until(time() + 5);
 //time_sleep_until(time(), 172800);
-time_sleep_until(time(), 86400);
+//time_sleep_until(time(), 86400);
 
 
-?>
 
-   
-
-       <td>
+ echo "<td>
 
        <form action='deleteTime.php' method='GET' name='Game0' >
+	   <input type='hidden' name='id' value='$id' />
+	   <input type='hidden' name='nome' value='$nome' />
+	   <input type='hidden' name='cognome' value='$cognome' />
+	   <input type='hidden' name='email' value='$email' />
+	   <input type='hidden' name='password' value='$password' />
 
-       <button type='submit' id='game0' width='60%' name='click0' > 
+       <button type='submit' id='game0' width='60%' name='click1' value='false' > 
        <img src='/m/img/icona_gioco.png' width='70px' height='70px' >
        </button>
        
@@ -223,12 +241,15 @@ time_sleep_until(time(), 86400);
        </td>
        
        </tr>
-       </table>
-              
+       </table>";
+    
+?>
+   
 
 <script>
 
 document.getElementById("game0").disabled = true;
+setTimeout(function(){document.getElementById("game0").disabled = false;},86400000);
 
 </script>
               
