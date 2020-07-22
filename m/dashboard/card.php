@@ -37,34 +37,14 @@ $hostdbname="mysql:host=".$host.";dbname=".$dbname.";charset=utf8;";
 
 $pepe = "/'$'/j&39#/{";
 $sale = "K%+£&aP9)K3lz";
-   
-try{
-   //CONNESSIONE DB
-   $conn = new PDO($hostdbname, $user, $pass);}
-   catch(PDOException $e){
-       echo $e->getMessage();
-       echo "<br />" . "Connessione Fallita!";
-       die();}
-       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       //echo "Connessione Riuscita!";
-       //EOF CONNESSIONE DB
-       
-       $nome="Alfredo";
-       
-      $select = "SELECT id FROM clienti WHERE nome='$nome'";
 
-      //SELECT DB FROM CLIENT
-      try{
-         $risultato = $conn->query($select);}
-      catch(PDOException $e){
-         echo $e->getMessage();
-         echo "<br />" . "Database Non Connesso!";
-         die();}
-         //echo "Database Connesso.";
-         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
-          $id = $riga['id'];
-		  
-		}
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];}
+
 		
  ?>
  <script>

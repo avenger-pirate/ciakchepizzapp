@@ -131,19 +131,34 @@ try{
 	    <input type="hidden" value="" />
         <button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'" >Vai al menu</button></td>
         </form>
-	<td>
-        <form action="card.php" method="GET">
-	    <input type="hidden" value="" />
-	    <button id="card"  name="Card" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/card.php'" >Card</button></td>
-	    </form>
-	
-	<!-- <tr> -->
+        
+        
+<?php
+        
+ echo "<td>
 
-<?php	
-	
+       <form action='card.php' method='POST' name='Card' >
+	   <input type='hidden' name='id' value='$id' />
+	   <input type='hidden' name='nome' value='$nome' />
+	   <input type='hidden' name='cognome' value='$cognome' />
+	   <input type='hidden' name='email' value='$email' />
+	   <input type='hidden' name='password' value='$password' />
+
+       <button type='submit' id='cardId' width='60%' name='card' value='true' > Card
+       </button>
+       
+       </form>
+       </td>
+       
+       </tr>
+       </table>";
+
+
+
 	echo "<td>
         <form action='impostazioni.php' method='POST' name='Settings' >
 	    <input type='hidden' name='id' value='$id' />
+	    <input type='hidden' name='email' value='$email' />
 	    <input type='hidden' name='password' value='$password' />
 	    <input type='hidden' name='nome' value='$nome' />
 	    <input type='hidden' name='cognome' value='$cognome' />        
