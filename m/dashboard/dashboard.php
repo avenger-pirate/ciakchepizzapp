@@ -124,39 +124,34 @@ try{
 
 <img src="/m/img/ciakchepizza_logo2.png" style="margin-top: -30px" width="350px" />
 <br>
-<table cellpadding="10" cellspacing="1">
-<tr>
-    <td>
-        <form action="menu.php" method="GET">
-	    <input type="hidden" value="" />
-        <button id="menu"  name="Menu" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'" >Vai al menu</button></td>
-        </form>
+
         
         
 <?php
         
- echo "<td>
-
-       <form action='card.php' method='POST' name='Card' >
+ echo "
+ <table cellpadding='10' cellspacing='1'>
+<tr>
+        <td>
+        <form action='menu.php' method='GET'>
+	    <input type='hidden' value='' />
+        <button id='menu'  name='Menu' width='60%' onclick='window.location.href='https://www.ciakchepizza.com/m/dashboard/menu.php'' > <img src='https://www.ciakchepizza.com/m/img/home.png' width='70px' height='70px'></button>
+        </form>
+        </td>
+	 
+       <td>
+	   <form action='card.php' method='POST' name='Card' >
 	   <input type='hidden' name='id' value='$id' />
 	   <input type='hidden' name='nome' value='$nome' />
 	   <input type='hidden' name='cognome' value='$cognome' />
 	   <input type='hidden' name='email' value='$email' />
 	   <input type='hidden' name='password' value='$password' />
-
-       <button type='submit' id='cardId' width='60%' name='card' value='true' > Card
-       </button>
-       
+	   <button id='Card' type='submit' id='cardId' width='60%' name='card' value='true' > <img src='https://www.ciakchepizza.com/m/img/card.png' width='70px' height='70px'></button>
        </form>
        </td>
-       
-       </tr>
-       </table>";
-
-
-
-	echo "<td>
-        <form action='impostazioni.php' method='POST' name='Settings' >
+	   
+	   <td>
+	    <form action='impostazioni.php' method='POST' name='Settings'>
 	    <input type='hidden' name='id' value='$id' />
 	    <input type='hidden' name='email' value='$email' />
 	    <input type='hidden' name='password' value='$password' />
@@ -165,37 +160,24 @@ try{
 	    <button id='settings' name='Impostazioni' width='60% onclick='window.location.href='https://www.ciakchepizza.com/m/dashboard/impostazioni.php'' >
 	    <img src='https://www.ciakchepizza.com/m/img/rotella_impostaz.png' width='70px' height='70px'>
 	    </button>
+		</form>
 	</td>
-        </form>";
-	   
-?>
+	</tr>
 	
-	
+	<tr>
 
-    </tr>
-    <tr>
-    <td>
-        <form action="profile.php" method="GET">
-        <input type="hidden" value="" />
-        <button id="profile"  name="Profilo" width="60%" onclick="window.location.href='https://www.ciakchepizza.com/m/dashboard/Profile.php'" ><img src="https://www.ciakchepizza.com/m/img/icona_profilo.png" width="70px" height="70px">
-        </button></td>
-        </form>
-        
-        
-<?php
-
- echo "<td>
-
-       <form action='logout.php' method='POST' name='Disconnect' >
+	   <td>
+	   <form action='logout.php' method='POST' name='Disconnect' >
 	   <input type='hidden' name='id' value='$id' />
 	   <input type='hidden' name='nome' value='$nome' />
 	   <input type='hidden' name='cognome' value='$cognome' />
 
-       <button type='submit' id='logout' width='60%' name='Logout' > Logout 
+       <button type='submit' id='logout' width='60%' name='Logout' ><img src='https://www.ciakchepizza.com/m/img/logout.png' width='70px' height='70px'>
        </button>
        
        </form>
 	   </td>";
+ 
 	   
 
 //DEBUGGING	   

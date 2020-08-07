@@ -44,8 +44,34 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password'];
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];}
+	
+	try{
+   //CONNESSIONE DB
+   $conn = new PDO($hostdbname, $user, $pass);}
+   catch(PDOException $e){
+       echo $e->getMessage();
+       echo "<br />" . "Connessione Fallita!";
+       die();}
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       //echo "Connessione Riuscita!";
+       //EOF CONNESSIONE DB
+       
+       
+       
+      $select = "SELECT score FROM clienti WHERE email='$email'";
 
-		
+ try{
+         $risultato = $conn->query($select);}
+      catch(PDOException $e){
+         echo $e->getMessage();
+         echo "<br />" . "Database Non Connesso!";
+         die();}
+         //echo "Database Connesso.";
+         if($riga = $risultato->fetch(PDO::FETCH_ASSOC)){ //scorre tutta la table clienti
+		 $score = $riga['score'];}
+		 
+		 
+		    $conn = null;
  ?>
  <script>
 function goBack() {
@@ -87,7 +113,7 @@ new QRCode(document.getElementById("qrcode"), <?php echo json_encode($id); ?>);
 <br><br>
 <div id="contatore">
 </div>
-<script>document.getElementById("contatore").innerHTML = "0";</script>
+<h2><script>document.getElementById("contatore").innerHTML = <?php echo json_encode($score); ?>;</script></h2>
 
 </div>
 

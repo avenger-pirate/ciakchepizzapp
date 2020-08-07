@@ -13,12 +13,14 @@
 <meta property="og:url" content="https://www.ciakchepizza.com/m/dashboard/impostazioni.php" />
 <meta property="og:image" content="https://www.ciakchepizza.com/m/img/sfond.png" />
 <meta property="og:type" content="website" /> 
-<title> Card </title>
+<title> Impostazioni Del Profilo </title>
 
 </head>
 
 <body background="/m/img/sfondo2.png"  height="100%" width="100%" 
 style="background-size: cover">
+    
+<div><div class="coolvetica" style="font-size: 60px; color: black; margin-left: -4%; margin-top: 100px" ><b><center> Impostazioni Del Profilo </center></b></div></div>
     
 <?php
 
